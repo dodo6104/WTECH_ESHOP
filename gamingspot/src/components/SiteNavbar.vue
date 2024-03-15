@@ -12,13 +12,19 @@
     <!-- Search Bar -->
     <div class="navbar-search">
       <input type="text" placeholder="Search">
-      <button type="submit">🔍</button>
+      <button type="button">
+        <img src="../assets/icons/search.png" alt="User" />
+      </button>
     </div>
 
     <!-- Icons or Buttons -->
     <div class="navbar-icons">
-      <button type="button">👤</button>
-      <button type="button">🛒</button>
+      <button type="button">
+        <img src="../assets/icons/user.png" alt="User" />
+      </button>
+      <button type="button">
+        <img src="../assets/icons/shopping-cart.png" alt="User" />
+      </button>
     </div>
   </nav>
 </template>
@@ -30,35 +36,4 @@ export default {
 }
 </script>
 
-<!-- Styles -->
-<style scoped>
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar-brand {
-  font-size: 1.5em;
-}
-
-.navbar-menu {
-  display: flex;
-}
-
-.navbar-item {
-  margin-right: 20px; /* Or your desired spacing */
-}
-
-.navbar-search {
-  display: flex;
-}
-
-.navbar-search input {
-  margin-right: 10px; /* Or your desired spacing */
-}
-
-.navbar-icons button {
-  margin-left: 10px; /* Or your desired spacing */
-}
-</style>
+<style src="../styles/SiteNavbar.css"></style>

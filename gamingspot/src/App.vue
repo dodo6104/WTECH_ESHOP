@@ -19,7 +19,6 @@
   }
   </script>
   
-  <style>
-  /* Tu môžete pridať globálne štýly, ak potrebujete */
-  </style>
+  <style src="./styles/Main.css"></style>
+
   

@@ -10,5 +10,3 @@ export default {
   // tu môže byť JavaScript špecifický pre Home.vue
 }
 </script>
-
-<!-- tu môže byť štýl špecifický pre Home.vue -->
