@@ -1,29 +1,35 @@
 <template>
-  <div>
-    KavadsaKavKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsaKavadsav
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    adsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    KavadsaKavadsaKavadsaKavadsaKavadsa
-    v
-    KavadsaKavadsaKavadsaKavadsaKavadsa
+  <div class = "Content">
+  <section class="latest-greatest">
+    <h2 class = "Sections">Latest & Greatest ></h2>
+    <div class="grid-holder">
+    <div class="product-grid">
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+      <SiteProduct/>
+    </div>
   </div>
+  </section>
+</div>
 </template>
 
 <script>
+import SiteProduct from '../components/SiteProduct.vue';
 export default {
   name: 'SiteHome',
-  // tu môže byť JavaScript špecifický pre Home.vue
+  components: {
+    SiteProduct
+  },
 }
 </script>
+
+<style src="../styles/SiteHomePage.css"></style>
+
