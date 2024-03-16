@@ -56,6 +56,7 @@
 }
 
 .payment-method label {
+    margin-right: 35px;
     vertical-align: middle; /* Align elements vertically */
 }
 
