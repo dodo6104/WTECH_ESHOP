@@ -12,13 +12,9 @@
 
                 <ProceedButton></ProceedButton>
                 
-                
                 <div @click="switchToLoginPanel">
                     <label>Log in</label>
                 </div>
-
-
-
         </section>
     </div>
 </template>
