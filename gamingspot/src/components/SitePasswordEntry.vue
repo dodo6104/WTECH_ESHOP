@@ -44,12 +44,13 @@ export default {
 
 <style scoped>
 input {
-    width: 92%;
+    width: calc(100% - 30px); /* Adjusted width to accommodate the icon */
     height: 35px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    position: relative; /* Set position to relative to accommodate absolute positioning of the icon */
 }
 
 .password-wrapper {
@@ -58,11 +59,12 @@ input {
 
 .icon {
     position: absolute;
-    top: 43%;
-    right: 20px;
+    top: 50%; /* Center vertically */
+    right: 5px; /* Adjusted right position */
     transform: translateY(-50%);
     cursor: pointer;
     font-size: 20px; /* Increase the size of the icon */
+    z-index: 1; /* Ensure the icon appears above the input field */
 }
 
 .valid-password {

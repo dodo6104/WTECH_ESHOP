@@ -22,7 +22,7 @@
 <script>
 
 import EmailFrame from './EmailFrame.vue'
-import PasswordFrame from './PasswordFrame.vue'
+import PasswordFrame from './SitePasswordEntry.vue'
 import ProceedButton from './ProceedButton.vue';
 
   export default {

@@ -25,7 +25,7 @@
 
     <!-- Icons or Buttons -->
     <div class="navbar-icons">
-      <button type="button"   @click="$router.push('/login')">
+      <button type="button"   @click="$router.push('/logged')">
         <img src="../assets/icons/user.png" alt="User" />
       </button>
       <button type="button">
