@@ -1,6 +1,6 @@
 <template>
   <div>
-    Kaaaaaaaaaaaaaaaar
+    Kava
   </div>
 </template>
 
