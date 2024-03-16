@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar">
     <!-- Logo or Branding -->
+  <button type="button" @click="$router.push('/')">
     <div class="navbar-brand">GamingSpot</div>
+  </button>
 
     <!-- Navigation Links -->
     <div class="navbar-menu"> 

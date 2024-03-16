@@ -13,7 +13,7 @@
                 <ProceedButton></ProceedButton>
                 
                 <div @click="switchToLoginPanel">
-                    <label>Log in</label>
+                    <label @click="$router.push('/login')">Log in</label>
                 </div>
         </section>
     </div>
@@ -28,7 +28,6 @@ import ProceedButton from './ProceedButton.vue';
   export default {
     data() {
       return {
-        title: 'GamingSpot',
       };
     },
 

@@ -10,7 +10,7 @@
             <ProceedButton></ProceedButton>
                 
             <div @click="switchToRegisterPanel">
-                <label>Register</label>
+                <label @click="$router.push('/register')">Register</label>
             </div>
         </section>
     </div>
@@ -26,7 +26,6 @@ export default {
 
     data() {
         return {
-            title: 'GamingSpot',
             email: '',
             password: '',
             isValidEmail: true,

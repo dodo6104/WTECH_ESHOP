@@ -1,36 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/SiteHome.vue';
 import Login from '../views/SiteLogin.vue';
+import Register from '../views/SiteRegister.vue';
 
-
-// const routes = [
-//   // history: createWebHistory(process.env.BASE_URL),
-//   // routes: [
-//     {
-//       path: '/',
-//       name: 'siteHome',
-//       component: Home
-//     },
-//     {
-//         path: '/login',
-//         name: 'siteLogin',
-//         component: () => import('../views/SiteLogin.vue')
-//     }
-//   ]
-// // });
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [{
     path: '/',
-    name: 'siteHome',
+    name: 'iteHome',
     component: Home
   },
   {
       path: '/login',
-      name: 'siteLogin',
+      name: 'iteLogin',
       component: Login
   },
+  {
+    path: '/register',
+    name: 'SiteRegister',
+    component: Register
+},
   ]
 })
 
