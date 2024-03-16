@@ -23,7 +23,7 @@
 
     <!-- Icons or Buttons -->
     <div class="navbar-icons">
-      <button type="button">
+      <button type="button"   @click="$router.push('/login')">
         <img src="../assets/icons/user.png" alt="User" />
       </button>
       <button type="button">
@@ -36,7 +36,7 @@
 <script>
 export default {
   name: 'SiteNavbar',
-  // JavaScript code can be added here if needed
+  
 }
 </script>
 
