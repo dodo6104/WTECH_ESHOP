@@ -5,12 +5,17 @@
   width: 100%;
   height: 110px;
   background-color: #a8dadc;
-  font: 21px Roboto;
+  font: 21px 'barlow', sans-serif;
   color: #000000;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 .navbar-brand {
-  font: 40px Roboto bold;
+  font: 40px 'barlow', bold;
   align-items: center;
   padding-left: 20px;
 }
@@ -18,27 +23,42 @@
 .navbar-menu {
   margin-left: 10%; 
   display: flex;
-  font: 21px Roboto bold;
+  font: 21px 'barlow', sans-serif;
   height: 100%;
   align-items: center;
 } 
+
+.navbar-menu button {
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Plynulá zmena */
+}
+
+.navbar-menu button:hover {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
     
 .navbar-item {
   margin-right: 40px; 
   text-align: right; 
+  font: 21px 'barlow', sans-serif;
+  display: inline-block;
 }
-    
+  
 .navbar-search {
   display: flex;  
   align-items: center;
   border-radius: 20px;
   background-color: #FFFFFF;
+  height: 37px;
 }
 
 .navbar-search input {
-  width: 206px;
+  width: 180px;
   background-color: transparent;
   border: none;
+  font-size: 21px;
+  padding: 20px
 }
   
 .navbar-search input:focus {
@@ -48,11 +68,6 @@
 .navbar-search img {
   width: 28px; 
   height: auto; 
-}
-
-button {
-  background-color: transparent;
-  border: none;
 }
 
 .navbar-icons {
@@ -68,7 +83,6 @@ button {
   width: 40px; 
   height: auto;
 }
-  
 
 .navbar-icons button:hover {
   background-color: rgba(255, 255, 255, 0.2);
@@ -79,7 +93,7 @@ button {
   opacity: 0.8; 
 }
 
-@media (max-width: 1014px) {
+@media (max-width: 1038px) {
   .navbar {
     justify-content: flex-start;
   }
@@ -101,7 +115,7 @@ button {
   }
 }
 
-@media (max-width: 714px) {
+@media (max-width: 756px) {
   .navbar-menu {
     display: flex; 
     flex-direction: column;

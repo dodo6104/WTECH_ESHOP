@@ -4,9 +4,13 @@
     <div class="navbar-brand">GamingSpot</div>
 
     <!-- Navigation Links -->
-    <div class="navbar-menu">
-      <div class="navbar-item">Platforms ▼</div>
-      <div class="navbar-item">Genres ▼</div>
+    <div class="navbar-menu"> 
+      <button>
+      <div class="navbar-item">Platforms ▽</div>
+    </button>
+    <button>
+      <div class="navbar-item">Genres ▽</div>
+    </button>
     </div>
 
     <!-- Search Bar -->
