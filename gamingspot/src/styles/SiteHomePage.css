@@ -1,15 +1,13 @@
-.Sections {
-    margin: 100px 0px 50px 0px;
-    border-bottom: 1px solid  rgba(0, 0, 0, 0.7);
-    padding: 10px 0px 30px 20px;
+
+
+.LatestGreatest {
+    padding-top: 100px;
+}   
+
+.Bestsellers {
+    padding-top: 80px;
 }
 
-.product-grid { 
-    padding: 0px 50px 0px 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin: 0 auto; /* Corrected the syntax here, it should be 'auto' instead of '0, auto' */
-    justify-content: center; /* This will center the items horizontally */
+.MegaDiscounts {
+    padding-top: 80px;
 }
-  
