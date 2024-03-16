@@ -12,7 +12,7 @@
 
                 <ProceedButton></ProceedButton>
                 
-                <div @click="switchToLoginPanel">
+                <div>
                     <label @click="$router.push('/login')">Log in</label>
                 </div>
         </section>
@@ -37,11 +37,7 @@ import ProceedButton from './ProceedButton.vue';
         ProceedButton
     },
 
-    methods: {
-        switchToLoginPanel() {
-            this.$emit('switchToLogin');
-        }
-    }
+    methods: {}
   };
   </script>
   
@@ -52,6 +48,7 @@ import ProceedButton from './ProceedButton.vue';
     margin: 0 auto;
     padding: 20px;
     padding-top: 10px;
+    text-align: center;
     /* padding-right: 43px; */
     border: 1px solid #ccc;
     border-radius: 5px;

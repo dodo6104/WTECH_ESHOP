@@ -9,7 +9,7 @@
             <PasswordFrame :inputId="'password_frame1'"></PasswordFrame>
             <ProceedButton></ProceedButton>
                 
-            <div @click="switchToRegisterPanel">
+            <div>
                 <label @click="$router.push('/register')">Register</label>
             </div>
         </section>
@@ -39,9 +39,6 @@ export default {
     },
 
     methods: {
-        switchToRegisterPanel() {
-            this.$emit('switchToRegister');
-        },
         togglePasswordVisibility() {
             this.passwordVisible = !this.passwordVisible;
             const passwordInput = document.getElementById('password_frame');
