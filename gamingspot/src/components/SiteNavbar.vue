@@ -8,7 +8,7 @@
     <!-- Navigation Links -->
     <div class="navbar-menu"> 
       <button>
-      <div class="navbar-item">Platforms ▽</div>
+      <div class="navbar-item" >Platforms ▽</div>
     </button>
     <button>
       <div class="navbar-item">Genres ▽</div>
