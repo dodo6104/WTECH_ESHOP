@@ -18,3 +18,5 @@
     }
   }
   </script>
+
+<style src="./styles/Main.css"></style>
