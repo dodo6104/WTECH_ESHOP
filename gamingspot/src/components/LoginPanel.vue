@@ -64,6 +64,7 @@ export default {
     width: 400px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
     padding-top: 10px;
     border: 1px solid #ccc; /* Default border color */
     border-radius: 5px;
