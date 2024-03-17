@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/SiteHome.vue';
 import Login from '../views/SiteLogin.vue';
 import Register from '../views/SiteRegister.vue';
-
+import Account from '../views/SiteAccountView.vue'
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -20,7 +20,12 @@ const router = createRouter({
     path: '/register',
     name: 'SiteRegister',
     component: Register
-},
+  },
+  {
+    path: '/logged',
+    name: 'LoggedAccount',
+    component: Account
+  }
   ]
 })
 

@@ -18,8 +18,13 @@
       </button>
     </div>
     <div class="navbar-icons">
+<<<<<<< HEAD
       <button type="button" @click="$router.push('/login')">
         <img src="../assets/icons/user.png" alt="Login" />
+=======
+      <button type="button"   @click="$router.push('/logged')">
+        <img src="../assets/icons/user.png" alt="User" />
+>>>>>>> 94b89c509f802accac36feb9fc97ae12c1c75cd3
       </button>
       <button type="button">
         <img src="../assets/icons/shopping-cart.png" alt="Cart" />
