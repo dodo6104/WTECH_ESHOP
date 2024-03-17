@@ -24,12 +24,16 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener('resize', this.isPlatformVisible = false);
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.isPlatformVisible = false);
+    window.removeEventListener('resize', this.handleResize);
   },                                                            
   methods: {
+    handleResize() {
+      this.isPlatformVisible = false
+    },
     handlePlatformClick(centerX) {
       this.isPlatformVisible = !this.isPlatformVisible
       this.$nextTick(() => {
