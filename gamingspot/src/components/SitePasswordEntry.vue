@@ -2,7 +2,7 @@
     <div>
         <div class="password-wrapper">
             <input type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
-            <img class="icon" src="../assets/show.png" alt="Show Password" @click="togglePasswordVisibility">
+            <img class="icon" src="../assets/icons/show.png" alt="Show Password" @click="togglePasswordVisibility">
         </div>
     </div>
 </template>

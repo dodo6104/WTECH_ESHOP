@@ -5,10 +5,10 @@
 
     <div class="payment-method">
         <label for="visa">Payment Methods:</label>
-        <img src="../assets/visa.png" alt="Visa Icon" id="visa">
-        <img src="../assets/mastercard.png" alt="MasterCard Icon" id="mastercard">
-        <img src="../assets/paypal.png" alt="PayPal Icon" id="paypal">
-        <img src="../assets/paysafe.png" alt="PaySafe Icon">
+        <img src="../assets/icons/visa.png" alt="Visa Icon" id="visa">
+        <img src="../assets/icons/mastercard.png" alt="MasterCard Icon" id="mastercard">
+        <img src="../assets/icons/paypal.png" alt="PayPal Icon" id="paypal">
+        <img src="../assets/icons/paysafe.png" alt="PaySafe Icon">
     </div>
  
 

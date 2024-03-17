@@ -8,21 +8,20 @@ export default {
     text: {
       type: String,
       required: true
-    }
-  },
-  data() {
-    return {
-      isSelected: false
+    },
+    isSelected: {
+      type: Boolean,
+      required: true
     }
   },
   methods: {
     handleClick() {
-      this.isSelected = !this.isSelected;
       this.$emit('selected', this.text);
     }
   }
 };
 </script>
+
 
 <style scoped>
 .custom-button {
@@ -35,7 +34,7 @@ export default {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 27px;
   cursor: pointer;
   border-radius: 2px;
 }

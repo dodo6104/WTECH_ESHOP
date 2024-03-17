@@ -28,8 +28,9 @@ export default {
 </script>
 
 <style scoped>
+
 h1 {
-    font-size: 25px;
+    font-size: 35px;
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 0;
