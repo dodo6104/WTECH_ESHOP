@@ -12,7 +12,7 @@
       </button>
     </div>
     <div class="navbar-search"  :style="searchDivStyles">
-      <input type="text" placeholder="Search" v-show="isSearchVisible">
+      <input type="text" v-model="searchQuery" placeholder="Search" v-show="isSearchVisible" ref="searchInput" @blur="onInputBlur">
       <button type="button" id="SearchMagnifyingGlass" @click="buttonClicked" :disabled="isButtonDisabled">
         <img src="../assets/icons/search.png" alt="Search" />
       </button>
@@ -37,48 +37,63 @@ export default {
       isVisible: true,
       isSearchVisible: true,
       searchDivStyles: {},
+      searchQuery: '',
     };
     
   },
   methods: {
+    onSearchBar() {
+      this.searchDivStyles = {
+        display: 'flex',  
+        alignItems: 'center',
+        borderRadius: '20px',
+        backgroundColor: '#FFFFFF',
+        height: '37px',
+      };
+  },
+    offSearchBar() {
+      this.searchDivStyles = {
+        border: 'none',
+        marginRight: '20px',
+        backgroundColor: 'transparent' 
+      };
+      this.searchQuery = ''
+    },
+
+    onInputBlur() {
+      if (window.innerWidth <= 1052+22){
+        this.isSearchVisible = false;
+        this.isVisible = window.innerWidth <= 1052+22;
+        this.offSearchBar();
+      }
+      else {
+        this.isSearchVisible = true;
+        this.onSearchBar();
+      }
+  },
+
     buttonClicked() {
       this.isSearchVisible = !this.isSearchVisible;
       this.isVisible = !this.isVisible;
       if (this.isSearchVisible) {
-      this.searchDivStyles = {
-        display: 'flex',  
-        alignItems: 'center',
-        borderRadius: '20px',
-        backgroundColor: '#FFFFFF',
-        height: '37px',
-      };
-    } else {
-      this.searchDivStyles = {
-        border: 'none',
-        marginRight: '20px',
-        backgroundColor: 'transparent' 
-      };
-      }
-    },
-
+        this.onSearchBar();
+        this.$nextTick(() => {
+      this.$refs.searchInput.focus();
+    });
+    } 
+    else {
+      this.offSearchBar();
+      }},
+    
     checkScreenWidthAndAdjustButton() {
-      this.isSearchVisible = window.innerWidth >= 1052+22
       this.isButtonDisabled = window.innerWidth >= 1052+22;
       this.isVisible = true;
       if (window.innerWidth >= 1052+22){
-        this.searchDivStyles = {
-        display: 'flex',  
-        alignItems: 'center',
-        borderRadius: '20px',
-        backgroundColor: '#FFFFFF',
-        height: '37px',
-      };
+        this.onSearchBar();
+        this.isSearchVisible = true
       } else {
-      this.searchDivStyles = {
-        border: 'none',
-        marginRight: '20px',
-        backgroundColor: 'transparent' 
-      };
+        this.isSearchVisible = false
+        this.offSearchBar();
     }
     },
   },
