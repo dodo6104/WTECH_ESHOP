@@ -39,8 +39,6 @@
 
 <script>
 
-
-
 export default {
   name: "SitePlatformMenu",
 }
@@ -57,7 +55,8 @@ export default {
 .PlatformMenu section {
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
   align-items: center;
   
 }
@@ -74,7 +73,6 @@ export default {
   border: 1px solid black;
   margin-bottom: 10px;
   padding: 10px 5px 10px 0px;
-  
 }
 
 </style>
