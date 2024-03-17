@@ -30,11 +30,25 @@ export default {
   mounted() {
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
+    document.addEventListener('click', this.handleClickOutside, true); // Pridaný capture mode
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.handleResize);
+    document.removeEventListener('click', this.handleClickOutside, true);
+
   },                                                            
   methods: {
+    handleClickOutside(event) {
+      const platformMenu = this.$refs.PlatformMenu?.$el;
+      const genresMenu = this.$refs.GenresMenu?.$el;
+
+      if (platformMenu && !platformMenu.contains(event.target)) {
+        this.isPlatformVisible = false;
+      }
+      if (genresMenu && !genresMenu.contains(event.target)) {
+        this.isGenresMenuVisible = false;
+      }
+    },
     handleResize() {
       this.isPlatformVisible = false
       this.isGenresMenuVisible = false

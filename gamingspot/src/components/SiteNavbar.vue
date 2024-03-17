@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <button type="button" @click="$router.push('/')">
-      <div class="navbar-brand">GamingSpot</div>
+      <div class="navbar-brand"><h1>GamingSpot</h1></div>
     </button>
     <div class="navbar-menu">
       <button class="platformButton" v-show="isVisible" @click="platformButtonClicked">
