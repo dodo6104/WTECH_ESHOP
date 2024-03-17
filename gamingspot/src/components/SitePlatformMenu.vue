@@ -1,5 +1,6 @@
 <template>
   <div class="PlatformMenu">
+    <div class="AllSections">
       <section>
         <h2>PC</h2>
         <div class="OptionsForPlatforms">
@@ -35,11 +36,11 @@
         </div>
       </section>
     </div>
+    <button type="submit" class="SearchButton">Search</button>
+    </div>
 </template>
 
 <script>
-
-
 
 export default {
   name: "SitePlatformMenu",
@@ -49,22 +50,29 @@ export default {
 <style>
 .PlatformMenu {
   position: absolute;
-  display: flex;
+  display: grid;
   border-radius: 5px;
   background-color: white;
+}
+
+.AllSections {
+  display: flex;
 }
 
 .PlatformMenu section {
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
   align-items: center;
   
 }
+
 .OptionsForPlatforms {
   display: flex;
   flex-direction: column;
 }
+
 .PlatformMenu h2 {
   font-size: 25px;
 }
@@ -74,7 +82,17 @@ export default {
   border: 1px solid black;
   margin-bottom: 10px;
   padding: 10px 5px 10px 0px;
-  
+}
+
+.SearchButton {
+  background-color: #000;
+  color: #fff; 
+  border: none;
+  border-radius: 20px; 
+  padding: 10px 30px;
+  font-size: 24px;
+  cursor: pointer; 
+  margin: 0% 35% 4% 35%;
 }
 
 </style>

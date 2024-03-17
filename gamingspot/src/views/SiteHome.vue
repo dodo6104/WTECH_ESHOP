@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="overlay" v-if="overlayActive" @click="hideOverlay">
-      <!-- Tu môžete pridať ľubovoľný obsah pre overlay -->
       <div class="overlay-content">
         <p>Some content here...</p>
         <button @click.stop="hideOverlay">Close</button>

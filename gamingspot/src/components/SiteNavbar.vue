@@ -1,13 +1,13 @@
 <template>
   <nav class="navbar">
     <button type="button" @click="$router.push('/')">
-      <div class="navbar-brand">GamingSpot</div>
+      <div class="navbar-brand"><h1>GamingSpot</h1></div>
     </button>
     <div class="navbar-menu">
-      <button v-show="isVisible" @click="platformButtonClicked">
+      <button class="platformButton" v-show="isVisible" @click="platformButtonClicked">
         <div class="navbar-item" >Platforms ▽</div>
       </button>
-      <button v-show="isVisible">
+      <button class="genresButton"  v-show="isVisible" @click="genresButtonClicked">
         <div class="navbar-item">Genres ▽</div>
       </button>
     </div>
@@ -43,11 +43,17 @@ export default {
   },
   methods: {
     platformButtonClicked() {
-      const button = this.$el.querySelector('.navbar-menu button'); // Upravte selektor podľa potreby
+      const button = this.$el.querySelector('.platformButton');
       const rect = button.getBoundingClientRect();
-      // Vypočítanie stredovej pozície
       const centerX = (rect.left + rect.width / 2)-50;
       this.$emit('platform-clicked', centerX);
+    },
+
+    genresButtonClicked() {
+      const button2 = this.$el.querySelector('.genresButton');
+      const rect2 = button2.getBoundingClientRect();
+      const centerX2 = (rect2.left + rect2.width / 2)-50;
+      this.$emit('genres-clicked', centerX2);
     },
 
     onSearchBar() {
