@@ -11,20 +11,15 @@
         <div class="navbar-item">Genres ▽</div>
       </button>
     </div>
-    <div class="navbar-search">
-      <input type="text" placeholder="Search" >
+    <div class="navbar-search"  :style="searchDivStyles">
+      <input type="text" placeholder="Search" v-show="isSearchVisible">
       <button type="button" id="SearchMagnifyingGlass" @click="buttonClicked" :disabled="isButtonDisabled">
         <img src="../assets/icons/search.png" alt="Search" />
       </button>
     </div>
     <div class="navbar-icons">
-<<<<<<< HEAD
-      <button type="button" @click="$router.push('/login')">
+      <button type="button" @click="$router.push('/logged')">
         <img src="../assets/icons/user.png" alt="Login" />
-=======
-      <button type="button"   @click="$router.push('/logged')">
-        <img src="../assets/icons/user.png" alt="User" />
->>>>>>> 94b89c509f802accac36feb9fc97ae12c1c75cd3
       </button>
       <button type="button">
         <img src="../assets/icons/shopping-cart.png" alt="Cart" />
@@ -40,15 +35,51 @@ export default {
     return {
       isButtonDisabled: true,
       isVisible: true,
+      isSearchVisible: true,
+      searchDivStyles: {},
     };
     
   },
   methods: {
     buttonClicked() {
+      this.isSearchVisible = !this.isSearchVisible;
       this.isVisible = !this.isVisible;
+      if (this.isSearchVisible) {
+      this.searchDivStyles = {
+        display: 'flex',  
+        alignItems: 'center',
+        borderRadius: '20px',
+        backgroundColor: '#FFFFFF',
+        height: '37px',
+      };
+    } else {
+      this.searchDivStyles = {
+        border: 'none',
+        marginRight: '20px',
+        backgroundColor: 'transparent' 
+      };
+      }
     },
+
     checkScreenWidthAndAdjustButton() {
+      this.isSearchVisible = window.innerWidth >= 1052+22
       this.isButtonDisabled = window.innerWidth >= 1052+22;
+      this.isVisible = true;
+      if (window.innerWidth >= 1052+22){
+        this.searchDivStyles = {
+        display: 'flex',  
+        alignItems: 'center',
+        borderRadius: '20px',
+        backgroundColor: '#FFFFFF',
+        height: '37px',
+      };
+      } else {
+      this.searchDivStyles = {
+        border: 'none',
+        marginRight: '20px',
+        backgroundColor: 'transparent' 
+      };
+    }
     },
   },
   mounted() {

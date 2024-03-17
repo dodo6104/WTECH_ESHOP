@@ -103,16 +103,6 @@ button {
     margin-right: 3%;
     margin-right: 0px; 
   }
-
-  .navbar-search {
-    border: none;
-    margin-right: 20px;
-    background-color: transparent;
-  }
-
-  .navbar-search input {
-      display: none;
-  }
 }
 
 @media (max-width: 756px) {
