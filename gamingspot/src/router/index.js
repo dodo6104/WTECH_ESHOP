@@ -8,12 +8,12 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [{
     path: '/',
-    name: 'iteHome',
+    name: 'SiteHome',
     component: Home
   },
   {
       path: '/login',
-      name: 'iteLogin',
+      name: 'SiteLogin',
       component: Login
   },
   {
