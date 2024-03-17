@@ -1,10 +1,13 @@
 <template>
-    <div>
+    <section>
         <div class="password-wrapper">
-            <input type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
+            <div>
+                <input type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
+            </div>
+            
             <img class="icon" src="../assets/icons/show.png" alt="Show Password" @click="togglePasswordVisibility">
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -45,24 +48,27 @@ export default {
 
 <style scoped>
 input {
+
     width: calc(100% - 30px); /* Adjusted width to accommodate the icon */
     height: 35px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    position: relative; /* Set position to relative to accommodate absolute positioning of the icon */
+
+    /* position: relative; Set position to relative to accommodate absolute positioning of the icon */
 }
 
 .password-wrapper {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* direction: row; */
+    align-items: center;
 }
 
 .icon {
-    position: absolute;
     top: 45%; /* Center vertically */
     right: 20px; /* Adjusted right position */
-    transform: translateY(-50%);
     cursor: pointer;
     width: 20px; /* Set width of the image */
     height: 20px; /* Set height of the image */
