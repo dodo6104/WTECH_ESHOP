@@ -4,7 +4,7 @@
       <div class="navbar-brand">GamingSpot</div>
     </button>
     <div class="navbar-menu">
-      <button v-show="isVisible">
+      <button v-show="isVisible" @click="platformButtonClicked">
         <div class="navbar-item" >Platforms ▽</div>
       </button>
       <button v-show="isVisible">
@@ -42,6 +42,14 @@ export default {
     
   },
   methods: {
+    platformButtonClicked() {
+      const button = this.$el.querySelector('.navbar-menu button'); // Upravte selektor podľa potreby
+      const rect = button.getBoundingClientRect();
+      // Vypočítanie stredovej pozície
+      const centerX = (rect.left + rect.width / 2)-50;
+      this.$emit('platform-clicked', centerX);
+    },
+
     onSearchBar() {
       this.searchDivStyles = {
         display: 'flex',  
@@ -50,7 +58,7 @@ export default {
         backgroundColor: '#FFFFFF',
         height: '37px',
       };
-  },
+    },
     offSearchBar() {
       this.searchDivStyles = {
         border: 'none',
