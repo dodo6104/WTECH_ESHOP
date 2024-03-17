@@ -93,7 +93,7 @@ button {
   opacity: 0.8; 
 }
 
-@media (max-width: 1038px) {
+@media (max-width: 1052px) {
   .navbar {
     justify-content: flex-start;
   }
@@ -111,7 +111,7 @@ button {
   }
 
   .navbar-search input {
-    display: none;
+      display: none;
   }
 }
 
@@ -123,4 +123,6 @@ button {
     justify-content: center;
   }
 }
+
+
 
