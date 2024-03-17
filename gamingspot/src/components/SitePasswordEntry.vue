@@ -2,7 +2,7 @@
     <div>
         <div class="password-wrapper">
             <input type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
-            <i class="icon fas fa-eye" @click="togglePasswordVisibility"></i>
+            <img class="icon" src="../assets/show.png" alt="Show Password" @click="togglePasswordVisibility">
         </div>
     </div>
 </template>
@@ -29,6 +29,7 @@ export default {
             const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
             this.isPasswordValid = passwordRegex.test(event.target.value);
         },
+
         togglePasswordVisibility() {
             this.passwordVisible = !this.passwordVisible; // Toggle the flag
             const input = document.getElementById(this.inputId);
@@ -59,11 +60,12 @@ input {
 
 .icon {
     position: absolute;
-    top: 50%; /* Center vertically */
-    right: 5px; /* Adjusted right position */
+    top: 45%; /* Center vertically */
+    right: 20px; /* Adjusted right position */
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 20px; /* Increase the size of the icon */
+    width: 20px; /* Set width of the image */
+    height: 20px; /* Set height of the image */
     z-index: 1; /* Ensure the icon appears above the input field */
 }
 
@@ -74,5 +76,4 @@ input {
 .invalid-password {
     outline-color: red;
 }
-
 </style>

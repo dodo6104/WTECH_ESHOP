@@ -29,7 +29,7 @@
 
 <style scoped>
 #nickname_entry {
-    width: 92%;
+    width: 90%;
     height: 35px;
     padding: 10px;
     margin-bottom: 10px;

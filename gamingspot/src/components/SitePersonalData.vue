@@ -3,9 +3,9 @@
         <h1>Personal Data</h1>
         <section id="view-section">
             <NicknameEntry class="password-frame"/>
-            <PasswordEntry class="password-frame"/>
-            <PasswordEntry class="password-frame" placeholder="New Password"/>
-            <PasswordEntry class="password-frame" placeholder="Retype Password"/>
+            <PasswordEntry class="password-frame" inputId="password_frame_1"/>
+            <PasswordEntry class="password-frame" inputId="password_frame_2" placeholder="New Password"/>
+            <PasswordEntry class="password-frame" inputId="password_frame_3" placeholder="Retype Password"/>
             <Button class="button">Save</Button>
         </section>
     </section>
