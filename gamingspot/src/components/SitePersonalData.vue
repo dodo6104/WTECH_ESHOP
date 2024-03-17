@@ -2,11 +2,11 @@
     <section id="main-section">
         <h1>Personal Data</h1>
         <section id="view-section">
-            <NicknameEntry class="password-frame"/>
+            <NicknameEntry class="password-frame" placeholder="Nickname"/>
             <PasswordEntry class="password-frame" inputId="password_frame_1"/>
             <PasswordEntry class="password-frame" inputId="password_frame_2" placeholder="New Password"/>
             <PasswordEntry class="password-frame" inputId="password_frame_3" placeholder="Retype Password"/>
-            <Button class="button">Save</Button>
+            <SaveButton/>
         </section>
     </section>
 </template>
@@ -15,12 +15,14 @@
 
 import NicknameEntry from './SiteNicknameEntry.vue'
 import PasswordEntry from './SitePasswordEntry.vue'
+import SaveButton from './SiteSaveButton.vue'
 
 export default {
     name: "PersonalData",
     components: {
         NicknameEntry,
-        PasswordEntry
+        PasswordEntry,
+        SaveButton
     }
 }
 </script>
@@ -56,31 +58,5 @@ h1 {
     width: 300px;
     margin-bottom: 10px; /* Add margin between PasswordFrames */
 }
-
-.button {
-    width: 200px;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-.button:active {
-  background-color: #0056b3;
-  transform: translateY(1px);
-}
-
 
 </style>

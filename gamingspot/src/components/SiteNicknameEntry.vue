@@ -3,7 +3,7 @@
 <template>
     <section>
         <div>
-            <input type="text" id="nickname_entry" placeholder="Nickname" :class="{ 'valid-nickname': isNicknameValid, 'invalid-nickname': !isNicknameValid }" v-model="email" @input="checkNicknameValidity($event)">
+            <input type="text" id="nickname_entry" :placeholder="placeholder" :class="{ 'valid-nickname': isNicknameValid, 'invalid-nickname': !isNicknameValid }" v-model="email" @input="checkNicknameValidity($event)">
         </div>
     </section>
 </template>
@@ -13,6 +13,12 @@
     export default{
         name: "NicknameEntry",
         
+        props: {
+            placeholder: {
+                type: String
+            }
+        },
+
         data() {
             return {
                 isNicknameValid: false
