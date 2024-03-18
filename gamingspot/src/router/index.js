@@ -7,6 +7,7 @@ import MyOrdersView from '../views/SiteMyOrdersView.vue'
 import PersonalDataView from '../views/SitePersonalDataView.vue'
 import PaymentInfoView from '../views/SitePaymentInfoView.vue'
 import GameView from '../views/SiteGameView.vue'
+import GameDetail from '../views/SiteGameDeatails.vue'
 
 
 const router = createRouter({
@@ -30,6 +31,11 @@ const router = createRouter({
     path: '/gameview',
     name: 'GameView',
     component: GameView
+  },
+  {
+    path: '/gamedetail',
+    name: 'GameDetail',
+    component: GameDetail
   },
   {
     path: '/account=:x',

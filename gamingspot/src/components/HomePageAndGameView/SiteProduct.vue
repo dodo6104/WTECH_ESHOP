@@ -1,11 +1,11 @@
 <template>
-  <div class="card">
+  <div class="card"  @click="onCardClick">
     <div class="image-placeholder">Picture 350x350</div>
     <div class="game-info">
       <h2 class="game-name">Name of the game</h2>
       <p class="platform">Platform</p>
       <p class="price">Price</p>
-      <button class="add-to-cart">Add To Cart</button>
+      <button class="add-to-cart" @click.stop="addToCart">Add To Cart</button>
     </div>
   </div>
 </template>
@@ -13,6 +13,14 @@
 <script>
 export default {
   name: 'SiteProduct',
+  methods: {
+    onCardClick() {
+      this.$router.push({ path: '/gamedetail' });
+    },
+    addToCart() {
+      console.log("Add cart")
+    }
+  }
 }
 </script>
 
