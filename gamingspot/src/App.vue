@@ -9,10 +9,10 @@
 </template>
   
 <script>
-import Navbar from './components/SiteNavbar.vue'
+import Navbar from './Navbar/SiteNavbar.vue'
 import Footer from './components/SiteFooter.vue'
-import PlatformMenu from './components/SitePlatformMenu.vue'
-import GenresMenu from './components/SiteGenresMenu.vue'
+import PlatformMenu from './Navbar/SitePlatformMenu.vue'
+import GenresMenu from './Navbar/SiteGenresMenu.vue'
 
 export default {
   components: {

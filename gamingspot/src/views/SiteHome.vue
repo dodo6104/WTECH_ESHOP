@@ -1,12 +1,5 @@
 <template>
   <div>
-    <div class="overlay" v-if="overlayActive" @click="hideOverlay">
-      <div class="overlay-content">
-        <p>Some content here...</p>
-        <button @click.stop="hideOverlay">Close</button>
-      </div>
-    </div>
-
     <div class="LatestGreatest">
       <Section :products="LatestGreatestProducts" sectionName="Latest & Greatest >"/>
     </div>
@@ -20,8 +13,8 @@
 </template>
 
 <script>
-import SiteProduct from '../components/SiteProduct.vue';
-import Section from '../components/SiteHomePageSection.vue';
+import SiteProduct from '../components/HomePageAndGameView/SiteProduct.vue';
+import Section from '../components/HomePageAndGameView/SiteHomePageSection.vue';
 
 export default {
   name: 'SiteHome',
@@ -51,17 +44,8 @@ export default {
       SiteProduct,
       SiteProduct
       ],
-      overlayActive: false // Stav pre zobrazenie/skrytie overlay
     };
   },
-  methods: {
-    showOverlay() {
-      this.overlayActive = true;
-    },
-    hideOverlay() {
-      this.overlayActive = false;
-    }
-  }
 }
 </script>
 

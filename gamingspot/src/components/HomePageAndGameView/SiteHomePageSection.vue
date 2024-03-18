@@ -22,5 +22,5 @@
   }
   </script>
   
-  <style src="../styles/SiteSectionPage.css"></style>
+  <style src="../../styles/SiteSectionPage.css"></style>
   

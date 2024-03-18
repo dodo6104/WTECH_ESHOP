@@ -6,6 +6,7 @@ import Register from '../views/SiteRegister.vue';
 import MyOrdersView from '../views/SiteMyOrdersView.vue'
 import PersonalDataView from '../views/SitePersonalDataView.vue'
 import PaymentInfoView from '../views/SitePaymentInfoView.vue'
+import GameView from '../views/SiteGameView.vue'
 
 
 const router = createRouter({
@@ -24,6 +25,11 @@ const router = createRouter({
     path: '/register',
     name: 'SiteRegister',
     component: Register
+  },
+  {
+    path: '/gameview',
+    name: 'GameView',
+    component: GameView
   },
   {
     path: '/account=:x',

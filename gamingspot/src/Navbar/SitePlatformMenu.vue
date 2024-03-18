@@ -36,7 +36,7 @@
         </div>
       </section>
     </div>
-    <button type="submit" class="SearchButton">Search</button>
+    <button type="submit" @click="searchGames" class="SearchButton">Search</button>
     </div>
 </template>
 
@@ -44,6 +44,11 @@
 
 export default {
   name: "SitePlatformMenu",
+  methods: {
+    searchGames() {
+      this.$router.push('/gameView');
+    }
+  }
 }
 </script>
 
