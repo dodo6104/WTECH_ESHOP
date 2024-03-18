@@ -4,7 +4,12 @@
     <section id="main-section">
         
         <div class="game-frame">
-          <img src="../../assets/pics/gta_v_game.jpg" alt="GTA V Game Image" height="200" width="200">
+          <div class="pics">
+            <img class="game-image" src="../../assets/pics/gta_v_game.jpg" alt="GTA V Game Image">
+            <img class="info-icon" src="../../assets/icons/info.png" alt="Info Icon">
+
+          </div>
+
           <div class="game-details">
             <div class="game-price">
               <label>12.59€</label>
@@ -13,7 +18,7 @@
               <button>Show Code</button>
             </div>
           </div>
-          <img class="info-icon" src="../../assets/icons/info.png" alt="Info Icon">
+          
         </div>
 
     </section>
@@ -35,7 +40,7 @@ export default {
 
 
 #main-section {
-    width: 100%;
+    /* width: 100%; */
     display: flex; /* Use Flexbox */
     flex-direction: column; /* Arrange children vertically */
 }
@@ -50,6 +55,58 @@ export default {
     /* margin-left: 20px; */
     /* margin-right: 20px; */
 }
-    
+
+.pics{
+  display: inline-block;
+  position: relative;
+}
+
+.game-image {
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
+.game-frame{
+  border: solid 1px;
+  align-items: center;
+  text-align: center;
+}
+
+.info-icon{
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;  
+}
+
+.game-button button {
+  width: 150px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-button:hover button {
+  background-color: #0056b3;
+}
+
+.game-button:active button {
+  background-color: #0056b3;
+  transform: translateY(1px);
+}
+
 
 </style>

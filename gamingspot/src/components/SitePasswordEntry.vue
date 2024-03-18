@@ -1,16 +1,15 @@
 <template>
     <section>
         <div class="password-wrapper">
-            <div>
-                <input type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
-            </div>
             
             <img class="icon" src="../assets/icons/show.png" alt="Show Password" @click="togglePasswordVisibility">
+            <input type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
+            
         </div>
     </section>
 </template>
 
-<script>
+<script>    
 export default {
     props: {
         placeholder: {
@@ -60,21 +59,26 @@ input {
 }
 
 .password-wrapper {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     /* direction: row; */
-    align-items: center;
+    /* align-items: center;
+    justify-content: center; */
+    /* display: flex;
+    flex-direction: row; */
+    width: 100%;
+    position: relative;
+    display: inline-block;
 }
 
 .icon {
-    top: 45%; /* Center vertically */
-    right: 20px; /* Adjusted right position */
+    width: 30px;
+    height: auto;
+    position: absolute;
+    top: 22%;
+    right: 5%;
     cursor: pointer;
-    width: 20px; /* Set width of the image */
-    height: 20px; /* Set height of the image */
-    z-index: 1; /* Ensure the icon appears above the input field */
 }
-
 .valid-password {
     outline-color: green;
 }

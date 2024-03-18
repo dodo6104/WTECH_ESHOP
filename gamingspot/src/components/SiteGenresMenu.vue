@@ -39,6 +39,7 @@ export default {
   display: grid;
   border-radius: 5px;
   background-color: white;
+  z-index: 5;
 }
 
 .GenresData {
