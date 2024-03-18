@@ -18,7 +18,7 @@
                         <div class="price-section">
                             <div class="Price">
                                 <div class="Price-Value">25 $</div>
-                                <div class="Old-Price-Value">30 $</div>
+                                <div class="Old-Price-Value"><del>30 $</del></div>
                             </div>
                             <div class="Discount">-XX%</div>
                         </div>

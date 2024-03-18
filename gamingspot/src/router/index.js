@@ -6,9 +6,9 @@ import Register from '../views/SiteRegister.vue';
 import MyOrdersView from '../views/SiteMyOrdersView.vue'
 import PersonalDataView from '../views/SitePersonalDataView.vue'
 import PaymentInfoView from '../views/SitePaymentInfoView.vue'
-import GameView from '../views/SiteGameView.vue'
-import GameDetail from '../views/SiteGameDeatails.vue'
-
+import CartListView from '../views/SiteCartListView.vue'
+import GameView from '../views/SiteGameView.vue';
+import GameDetail from '../views/SiteGameDeatails.vue';
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -60,6 +60,11 @@ const router = createRouter({
     name: 'PaymentInfo',
     component: PaymentInfoView,
     props: route => ({ account_id: route.params.u })
+  },
+  {
+    path: '/cart',
+    name: 'ShoppingCart',
+    component: CartListView
   }
   ]
 })

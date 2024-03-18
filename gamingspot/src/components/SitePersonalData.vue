@@ -6,7 +6,7 @@
             <PasswordEntry class="password-frame" inputId="password_frame_1"/>
             <PasswordEntry class="password-frame" inputId="password_frame_2" placeholder="New Password"/>
             <PasswordEntry class="password-frame" inputId="password_frame_3" placeholder="Retype Password"/>
-            <SaveButton/>
+            <CustomButton text="Save"/>
         </section>
     </section>
 </template>
@@ -15,14 +15,14 @@
 
 import NicknameEntry from './SiteNicknameEntry.vue'
 import PasswordEntry from './SitePasswordEntry.vue'
-import SaveButton from './SiteSaveButton.vue'
+import CustomButton from './SiteSaveButton.vue'
 
 export default {
     name: "PersonalData",
     components: {
         NicknameEntry,
         PasswordEntry,
-        SaveButton
+        CustomButton
     }
 }
 </script>

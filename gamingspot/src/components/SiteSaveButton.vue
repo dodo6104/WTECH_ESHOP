@@ -2,7 +2,7 @@
 <template>
 
     <div>
-        <Button class="button">Save</Button>
+        <Button class="button">{{ text }}</Button>
     </div>
 
 </template>
@@ -10,18 +10,26 @@
 
 <script>
 
+
 export default{
-    name: "SaveButton"
+    name: "SaveButton",
+    props: {
+      text: {
+        type: String,
+        required: false,
+        default: ""
+      }
+    }
 }
 
 </script>
 
 <style scoped>
 .button {
-    width: 200px;
+  width: 200px;
   display: inline-block;
   padding: 10px 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   font-size: 16px;
   font-weight: bold;
   text-align: center;

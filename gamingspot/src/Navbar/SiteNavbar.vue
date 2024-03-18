@@ -21,7 +21,7 @@
       <button type="button" @click="$router.push('/account=0')">
         <img src="../assets/icons/user.png" alt="Login" />
       </button>
-      <button type="button">
+      <button type="button" @click="$router.push('/cart')">
         <img src="../assets/icons/shopping-cart.png" alt="Cart" />
       </button>
     </div>
