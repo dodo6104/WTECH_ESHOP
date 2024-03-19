@@ -9,7 +9,7 @@
             <CountSelector class="count-selector" @increment-event="handleIncrement" @decrement-event="handleDecrement"/>
         </div>
 
-        <img class="trash-icon" src="../../assets/icons/trash.png" @click="$emit('remove-event')">
+        <img class="trash-icon" src="../../assets/icons/trash.png" @click="$emit('remove-event', this.count)">
     </section>
 </template>
 
@@ -33,16 +33,19 @@ export default {
     },
     data() {
         return {
-            modifiable_price: this.price
+            modifiable_price: this.price,
+            count: 1
         }
     },
     methods: {
         handleIncrement() {
             this.modifiable_price += this.price; // Increment the price by the unit price
+            this.count += 1;
             this.$emit('increment-event', this.price); // Emit the increment-event with the price as an argument
         },
         handleDecrement() {
             this.modifiable_price -= this.price; // Decrement the price by the unit price
+            this.count -= 1;
             this.$emit('decrement-event', this.price); // Emit the decrement-event with the price as an argument
         }
     }

@@ -20,7 +20,7 @@
             </div>
 
             <div class="row">
-                <SaveButton/>
+                <SaveButton text="Save"/>
             </div>
         </section>
 

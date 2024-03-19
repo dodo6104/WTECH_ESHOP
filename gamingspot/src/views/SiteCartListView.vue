@@ -17,7 +17,7 @@
                 caught so that the item which emitted the event can be identified and removed. -->
             <section class="cart-list" v-if="cartItems.length !== 0">
                 
-                <OrderFrame v-for="(item, index) in cartItems" :key="item.name" :name="item.name" :price="item.price" @remove-event="() => handleRemove(index, item.price)"
+                <OrderFrame v-for="(item, index) in cartItems" :key="item.name" :name="item.name" :price="item.price" @remove-event="(count) => handleRemove(index, item.price, count)"
                     @increment-event="handle_increment" @decrement-event="handle_decrement"></OrderFrame>
             </section>
         </div>
@@ -56,6 +56,7 @@
           { name: "Civilization VI", price: 26.36 },
         ],
         totalPrice: 0
+        // count: 1
       };
     },
     created() {
@@ -63,17 +64,21 @@
     this.totalPrice = this.cartItems.reduce((accumulator, currentItem) => accumulator + currentItem.price, 0);
     },
     methods: {
-      handleRemove(index, receivedPrice) {
+      handleRemove(index, receivedPrice, count) {
         this.cartItems.splice(index, 1);
-        this.totalPrice -= receivedPrice;
+        const deduction = count * receivedPrice;
+        this.totalPrice = Math.max(0, this.totalPrice - deduction);
+
       },
 
       handle_increment(receivedPrice){
         this.totalPrice += receivedPrice;
+        // this.count += 1;
       },
 
       handle_decrement(receivedPrice){
         this.totalPrice -= receivedPrice;
+        // this.count += 1;
       }
     }
   }
