@@ -66,7 +66,7 @@
                         <CustomButton class="custom-button" text="Back" :onClick="handleGoBackClick"></CustomButton>
                     </div>
                     <div class="continue-button-section">
-                        <CustomButton class="custom-button" text="Continue"></CustomButton>
+                        <CustomButton class="custom-button" text="Continue" :onClick="toNextSection"></CustomButton>
                     </div>
                 </div>
         </section>
@@ -95,6 +95,9 @@ export default {
     methods: {
         handleGoBackClick() {
             router.push('/cart');
+        },
+        toNextSection(){
+            router.push('/summary');
         },
         async fetchCities(event) {
             const countryCode = event.target.value;
