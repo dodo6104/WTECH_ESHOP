@@ -1,15 +1,20 @@
 <template>
     <section class="order-frame">
 
-        <label class="game-name">{{ name }}</label>
+        <label class="game-index"> {{ index }}.</label>
+        <label class="game-name"> {{ name }}</label>
 
-
+        
+    
         <div class="game-price-frame">
             <label class="game-price">{{ modifiable_price.toFixed(2) }}€</label>
             <CountSelector class="count-selector" @increment-event="handleIncrement" @decrement-event="handleDecrement"/>
         </div>
 
         <img class="trash-icon" src="../../assets/icons/trash.png" @click="$emit('remove-event', this.count)">
+
+
+        
     </section>
 </template>
 
@@ -19,6 +24,10 @@ import CountSelector from '../SiteCountSelector.vue'
 export default {    
     name: "OrderFrame",
     props: {
+        index: {
+            type: Number,
+            required: true
+        },
         name: {
             type: String,
             required: true
@@ -69,6 +78,10 @@ export default {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
 }
 
+.game-index {
+    font-size: 18px;
+}
+
 .game-name {
     flex: 1; /* Allow the game name label to take up remaining space */
     font-size: 20px;
@@ -78,11 +91,15 @@ export default {
     text-overflow: ellipsis;
 }
 
+
 .game-price-frame {
     display: flex;
     flex-direction: row;
     align-items: center;
+
     gap: 15px;
+    padding-left: 10px;
+    /* border-left: 2px solid; */
 }
 
 .game-price {

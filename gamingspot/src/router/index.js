@@ -2,14 +2,15 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/SiteHome.vue';
 import Login from '../views/SiteLogin.vue';
 import Register from '../views/SiteRegister.vue';
-// import Account from '../views/SiteAccountView.vue'
-import MyOrdersView from '../views/SiteMyOrdersView.vue'
-import PersonalDataView from '../views/SitePersonalDataView.vue'
-import PaymentInfoView from '../views/SitePaymentInfoView.vue'
-import CartListView from '../views/SiteCartListView.vue'
+import MyOrdersView from '../views/SiteMyOrdersView.vue';
+import PersonalDataView from '../views/SitePersonalDataView.vue';
+import PaymentInfoView from '../views/SitePaymentInfoView.vue';
+import CartListView from '../views/SiteCartListView.vue';
 import GameView from '../views/SiteGameView.vue';
 import GameDetail from '../views/SiteGameDeatails.vue';
-import ShippingDetailsView from '../views/SiteShippingDetails.vue'
+import ShippingDetailsView from '../views/SiteShippingDetails.vue';
+import SummaryView from '../views/SiteSummary.vue';
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -71,6 +72,12 @@ const router = createRouter({
     path: '/shipping',
     name: 'ShippingDetails',
     component: ShippingDetailsView
+  },
+  {
+    path: '/summary',
+    name: 'SummaryView',
+    component: SummaryView,
+    props: { originalPrice: 15.55, discountedPrice: 13.25 }
   }
   ]
 })
