@@ -8,7 +8,7 @@
 .product-grid { 
     padding: 0px 50px 0px 50px;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     gap: 40px;
     margin: 0 auto;
     justify-content: center; 

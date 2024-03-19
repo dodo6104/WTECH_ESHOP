@@ -52,12 +52,13 @@ export default {
 <style>
 .ShoppingPanel {
     display: flex;
-    width: 100%; /* Rozťahuje panel na celú dostupnú šírku */
+    max-width: 650px;
     justify-content: space-between;
 }
 
 .LeftSection {
     display: block;
+    padding-right: 10px;
 }
 
 .NameSelectors {

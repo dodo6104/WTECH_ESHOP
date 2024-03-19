@@ -25,7 +25,6 @@ name: 'SiteSystemRequirements',
     display: flex;
     justify-content: center;
     width: 350px;
-    height: 360px;
 }
 
 .requirements {

@@ -23,7 +23,5 @@ props: {
     flex: 0 0 auto;
     display: flex;
     max-width: 350px;
-    max-height: 350px;
-    margin-right: 20px;
 }
 </style>
