@@ -14,15 +14,15 @@
     <div class="navbar-search"  :style="searchDivStyles">
       <input type="text" v-model="searchQuery" placeholder="Search" v-show="isSearchVisible" ref="searchInput" @blur="onInputBlur">
       <button type="button" id="SearchMagnifyingGlass" @click="buttonClicked" :disabled="isButtonDisabled">
-        <img src="../assets/icons/search.png" alt="Search" />
+        <img src="../../assets/icons/search.png" alt="Search" />
       </button>
     </div>
     <div class="navbar-icons">
       <button type="button" @click="$router.push('/account=0')">
-        <img src="../assets/icons/user.png" alt="Login" />
+        <img src="../../assets/icons/user.png" alt="Login" />
       </button>
       <button type="button" @click="$router.push('/cart')">
-        <img src="../assets/icons/shopping-cart.png" alt="Cart" />
+        <img src="../../assets/icons/shopping-cart.png" alt="Cart" />
       </button>
     </div>
   </nav>
@@ -121,4 +121,4 @@ export default {
 };
 </script>
 
-<style src="../styles/SiteNavbar.css"></style>
+<style src="../../styles/SiteNavbar.css"></style>

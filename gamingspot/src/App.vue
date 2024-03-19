@@ -9,10 +9,10 @@
 </template>
   
 <script>
-import Navbar from './Navbar/SiteNavbar.vue'
+import Navbar from './components/Navbar/SiteNavbar.vue'
 import Footer from './components/SiteFooter.vue'
-import PlatformMenu from './Navbar/SitePlatformMenu.vue'
-import GenresMenu from './Navbar/SiteGenresMenu.vue'
+import PlatformMenu from './components/Navbar/SitePlatformMenu.vue'
+import GenresMenu from './components/Navbar/SiteGenresMenu.vue'
 
 export default {
   components: {
@@ -83,4 +83,4 @@ export default {
 };
 </script>
 
-<style src="./styles/Main.css"></style>
+<style src="./styles/Main.css"></style>./Navbar/SiteNavbar.vue

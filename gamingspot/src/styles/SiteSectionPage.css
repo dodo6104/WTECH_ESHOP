@@ -7,10 +7,10 @@
 
 .product-grid { 
     padding: 0px 50px 0px 50px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     gap: 40px;
-    margin: 0 auto; /* Corrected the syntax here, it should be 'auto' instead of '0, auto' */
-    justify-content: center; /* This will center the items horizontally */
+    margin: 0 auto;
+    justify-content: center; 
 }
   
