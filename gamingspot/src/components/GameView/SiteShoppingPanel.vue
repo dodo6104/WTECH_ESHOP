@@ -10,7 +10,7 @@
                     <div class="Price-Value">{{ newPriceValue }} $</div>
                     <div class="Old-Price-Value"  v-if="oldPriceValue !== newPriceValue"><del>{{ oldPriceValue }} $</del></div>
                 </div>
-            <div class="Discount"  v-if="oldPriceValue !== newPriceValue">-{{ discount }} %</div>
+            <div class="Discount" v-if="oldPriceValue !== newPriceValue">-{{ discount }} %</div>
         </div>
     </div>
     <div class="RigthSection">
