@@ -41,12 +41,13 @@ export default {
         handleIncrement() {
             this.modifiable_price += this.price; // Increment the price by the unit price
             this.count += 1;
-            this.$emit('increment-event', this.price); // Emit the increment-event with the price as an argument
+            this.$emit('increment-event', this.price, this.modifiable_price); // Emit the increment-event with the price as an argument
         },
         handleDecrement() {
             this.modifiable_price -= this.price; // Decrement the price by the unit price
             this.count -= 1;
-            this.$emit('decrement-event', this.price); // Emit the decrement-event with the price as an argument
+            this.modifiable_price = Math.max(0, this.modifiable_price);
+            this.$emit('decrement-event', this.price, this.modifiable_price); // Emit the decrement-event with the price as an argument
         }
     }
 }
@@ -57,12 +58,13 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 5px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
     background-color: #CED1D9; /* Use a non-contrasting background color */
     gap: 15px;
     min-width: 70px;
-    padding: 15px;
+    padding: 8px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
 }

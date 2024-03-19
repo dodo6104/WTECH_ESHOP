@@ -9,6 +9,7 @@ import PaymentInfoView from '../views/SitePaymentInfoView.vue'
 import CartListView from '../views/SiteCartListView.vue'
 import GameView from '../views/SiteGameView.vue';
 import GameDetail from '../views/SiteGameDeatails.vue';
+import ShippingDetailsView from '../views/SiteShippingDetails.vue'
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -65,6 +66,11 @@ const router = createRouter({
     path: '/cart',
     name: 'ShoppingCart',
     component: CartListView
+  },
+  {
+    path: '/shipping',
+    name: 'ShippingDetails',
+    component: ShippingDetailsView
   }
   ]
 })

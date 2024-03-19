@@ -2,7 +2,7 @@
 <template>
 
     <div>
-        <Button class="button">{{ text }}</Button>
+        <Button class="button" @click="handleClick">{{ text }}</Button>
     </div>
 
 </template>
@@ -18,6 +18,18 @@ export default{
         type: String,
         required: false,
         default: ""
+      },
+      onClick: {
+        type: Function,
+        required: false
+      }
+    },
+
+    methods: {
+      handleClick(){
+        if(this.onClick){
+          this.onClick();
+        }
       }
     }
 }
@@ -27,6 +39,7 @@ export default{
 <style scoped>
 .button {
   width: 200px;
+  height: 41px;
   display: inline-block;
   padding: 10px 20px;
   /* margin-top: 20px; */
