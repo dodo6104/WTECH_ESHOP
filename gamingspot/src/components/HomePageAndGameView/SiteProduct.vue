@@ -1,6 +1,8 @@
 <template>
   <div class="card"  @click="onCardClick">
-    <div class="image-placeholder">Picture 350x350</div>
+    <div class="image-placeholder">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/5f/Dishonored_2_cover_art.jpg" alt="" width="250" height="250">
+    </div>
     <div class="game-info">
       <h2 class="game-name">Name of the game</h2>
       <p class="platform">Platform</p>

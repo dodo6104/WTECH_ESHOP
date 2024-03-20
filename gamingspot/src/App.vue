@@ -3,7 +3,7 @@
     <Navbar @platform-clicked="handlePlatformClick" @genres-clicked="handleGenresClick"/>
     <platformMenu v-if="isPlatformVisible" ref="PlatformMenu"/>
     <GenresMenu v-if="isGenresMenuVisible" ref="GenresMenu"/>
-    <router-view/>
+    <router-view class="Content" />
     <Footer />
   </div>
 </template>
@@ -83,4 +83,8 @@ export default {
 };
 </script>
 
-<style src="./styles/Main.css"></style>./Navbar/SiteNavbar.vue
+<style src="./styles/Main.css"></style>
+
+<style >
+
+</style>
