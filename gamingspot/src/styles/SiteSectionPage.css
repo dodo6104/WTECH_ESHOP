@@ -1,8 +1,10 @@
 .Sections {
     margin: 0px 0px 50px 0px;
     border-bottom: 1px solid  rgba(0, 0, 0, 0.7);
-    padding: 10px 0px 30px 20px;
+    padding: 0px 0px 60px 20px;
     font-size: 36px;
+    background-image: linear-gradient(to left, #4B2C4C , #151F28);
+    text-align: center;
 }
 
 .product-grid { 

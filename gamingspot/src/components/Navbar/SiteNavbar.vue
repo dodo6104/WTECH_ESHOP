@@ -22,7 +22,7 @@
         <img src="../../assets/icons/user.png" alt="Login" />
       </button>
       <button type="button" @click="$router.push('/cart')">
-        <img src="../../assets/icons/shopping-cart.png" alt="Cart" />
+        <img src="../../assets/icons/shopping-cart.gif" alt="Cart" />
       </button>
     </div>
   </nav>
@@ -121,4 +121,122 @@ export default {
 };
 </script>
 
-<style src="../../styles/SiteNavbar.css"></style>
+<style >
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 110px;
+  font: 21px 'Roboto', sans-serif;
+  background-color: #003366;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  align-items: center;
+  padding-left: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.navbar-brand h1 {
+  font-size: 40px;
+}
+
+.navbar-menu {
+  margin-left: 10%; 
+  display: flex;
+  font: 21px 'Roboto', sans-serif;
+  height: 100%;
+  align-items: center;
+} 
+
+.navbar-menu button {
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  color: white;
+}
+    
+.navbar-item {
+  margin-right: 40px; 
+  text-align: right; 
+  font: 21px 'Roboto', sans-serif;
+  display: inline-block;
+}
+  
+.navbar-search {
+  display: flex;  
+  align-items: center;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  height: 37px;
+}
+
+.navbar-search input {
+  width: 180px;
+  background-color: transparent;
+  border: none;
+  font-size: 21px;
+  padding: 20px
+}
+  
+.navbar-search input:focus {
+  outline: none;
+}
+
+.navbar-search img {
+  width: 28px; 
+  height: auto; 
+}
+
+.navbar-icons {
+  padding-right: 20px;
+}
+
+.navbar-icons button {
+  background-color: transparent;
+  margin-left: 10px; 
+}
+
+.navbar-icons img {
+  width: 40px; 
+  height: auto;
+}
+
+.navbar-icons button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+  
+.navbar-icons button img:hover {
+  opacity: 0.8; 
+}
+
+@media (max-width: 1052px) {
+  .navbar {
+    justify-content: flex-start;
+  }
+  
+  .navbar-menu {
+    margin-left: auto; 
+    margin-right: 3%;
+    margin-right: 0px; 
+  }
+}
+
+@media (max-width: 756px) {
+  .navbar-menu {
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+}
+</style>
