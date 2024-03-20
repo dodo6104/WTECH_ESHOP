@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="components-container">
-            <AccountMenu @selected-button="handle_selected"/>
+            <AccountMenu class="account-menu" @selected-button="handle_selected"/>
             <component :is="selectedComponent"/>
         </div>
     </section>
@@ -56,4 +56,6 @@ export default {
     width: 100%;
     display: flex; /* Use flexbox to layout children horizontally */
 }
+
+
 </style>../components/MyOrders/SiteMyOrders.vue../components/MyOrders/ks.vue

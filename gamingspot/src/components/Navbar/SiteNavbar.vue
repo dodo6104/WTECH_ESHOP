@@ -18,7 +18,7 @@
       </button>
     </div>
     <div class="navbar-icons">
-      <button type="button" @click="$router.push('/account=0')">
+      <button type="button" @click="$router.push('/login')">
         <img src="../../assets/icons/user.png" alt="Login" />
       </button>
       <button type="button" @click="$router.push('/cart')">

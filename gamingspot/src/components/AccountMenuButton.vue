@@ -1,5 +1,13 @@
 <template>
-  <button :class="{ 'custom-button': true, 'selected-button': isSelected }" @click="handleClick">{{ text }}</button>
+  <button :class="{ 'custom-button': true, 'selected-button': isSelected }" @click="handleClick">
+    <div class="button-content">
+      
+  
+    <span>{{ text }} </span>
+    <slot></slot>
+      </div>
+  
+  </button>
 </template>
 
 <script>
@@ -41,6 +49,14 @@ export default {
 
 .selected-button {
   background-color: #020675;
+}
+
+.button-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
 }
 
 .custom-button:hover {

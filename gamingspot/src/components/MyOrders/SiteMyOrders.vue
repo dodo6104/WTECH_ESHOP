@@ -1,8 +1,8 @@
 <template>
-  <section id="main-section">
-    <h1>My Orders</h1>
+  <section class="main-section">
+    <UnderlinedHeader text="My Orders"></UnderlinedHeader>
 
-    <section id="view-section">
+    <section class="view-section">
       <div class="game-row">
         <OrderFrame />
         <OrderFrame />
@@ -23,31 +23,35 @@
 <script>
 // Import the OrderFrame component
 import OrderFrame from './SiteOrderFrame.vue';
+import UnderlinedHeader from '../general/SiteUnderlinedHeader.vue';
 
 export default {
   name: "MyOrdersView",
   components: {
-    // Register the OrderFrame component
-    OrderFrame
+    OrderFrame,
+    UnderlinedHeader
   },
   methods: {
-    // Define your methods here if needed
-    // handlePageChange() {}
   }
 };
 </script>
 
 <style scoped>
-h1 {
-    font-size: 35px;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 0;
+
+#main-section {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+   
 }
 
-  .game-row {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.view-section{
+  padding-left: 50px;
+}
+
+.game-row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 </style>

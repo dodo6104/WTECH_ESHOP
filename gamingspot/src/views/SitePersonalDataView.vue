@@ -44,6 +44,7 @@ export default {
 .components-container {
     width: 100%;
     display: flex; /* Use flexbox to layout children horizontally */
+
 }
 
 </style>

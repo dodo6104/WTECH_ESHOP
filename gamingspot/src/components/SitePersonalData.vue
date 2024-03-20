@@ -1,6 +1,9 @@
 <template>
-    <section id="main-section">
-        <h1>Personal Data</h1>
+    
+
+    <section class="main-section">
+        <UnderlinedHeader text="Personal Data"></UnderlinedHeader>
+    
         <section id="view-section">
             <NicknameEntry class="password-frame" placeholder="Nickname"/>
             <PasswordEntry class="password-frame" inputId="password_frame_1"/>
@@ -16,30 +19,30 @@
 import NicknameEntry from './SiteNicknameEntry.vue'
 import PasswordEntry from './SitePasswordEntry.vue'
 import CustomButton from './SiteSaveButton.vue'
+import UnderlinedHeader from './general/SiteUnderlinedHeader.vue'
+
 
 export default {
     name: "PersonalData",
     components: {
         NicknameEntry,
         PasswordEntry,
-        CustomButton
+        CustomButton,
+        UnderlinedHeader
     }
 }
 </script>
 
 <style scoped>
 
-h1 {
-    font-size: 35px;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 0;
-}
 
-#main-section {
+.main-section {
+
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
+    
+    
 }
 
 #view-section {
@@ -47,8 +50,10 @@ h1 {
     display: flex;
     flex-direction: column; /* Arrange children vertically */
     align-items: center;
-    border-top: 1px solid;
+    width: 100%;
+    /* max-width: 300px; */
     margin: 10px;
+    border: 1px solid;
 }
 
 .nickname-frame {

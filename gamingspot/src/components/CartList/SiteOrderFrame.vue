@@ -99,7 +99,6 @@ export default {
 
     gap: 15px;
     padding-left: 10px;
-    /* border-left: 2px solid; */
 }
 
 .game-price {

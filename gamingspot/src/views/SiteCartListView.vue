@@ -109,12 +109,7 @@
   </script>
   
   <style scoped>
-  h1 {
-    margin-left: 15px;
-    margin-right: 15px;
-    padding-bottom: 5px;
-    border-bottom: solid 1px;
-  }
+
   
   .main-section{
     width: 100%;

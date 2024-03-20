@@ -73,6 +73,10 @@ export default {
   text-align: center;
 }
 
+.game-details{
+  background-color: rgb(176, 174, 174);
+}
+
 .info-icon{
   height: 30px;
   position: absolute;

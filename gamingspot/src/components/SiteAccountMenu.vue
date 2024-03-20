@@ -1,5 +1,5 @@
 <template>
-  <section id="main_section">
+  <section class="main_section">
     <div>
       <AccountMenuButton :text="'My Orders'" :isSelected="selectedButton === 'My Orders'" @selected="handleSelected"></AccountMenuButton>
     </div>
@@ -9,6 +9,14 @@
     <div>
       <AccountMenuButton :text="'Payment Information'" :isSelected="selectedButton === 'Payment Information'" @selected="handleSelected"></AccountMenuButton>
     </div>
+
+    <div class="logout-option">
+      <AccountMenuButton text="Log Out" :isSelected="selectedButton === 'Payment Information'" @selected="logOut">
+        <img class="logout-icon" src="../assets/icons/logout.png" />
+      </AccountMenuButton>
+      
+    </div>
+
   </section>
 </template>
 
@@ -46,6 +54,9 @@ export default {
           // this.selectedComponent = PaymentInfo;
           this.$router.push(`/account=${this.account_id}/payment_info`)
       }
+    },
+    logOut(){
+      this.$router.push('/')
     }
   }
 };
@@ -54,11 +65,26 @@ export default {
 <style scoped>
 /* styles remain the same */
 
-  #main_section {
-    width: 300px;
+  .main_section {
+    min-width:  210px;
+    max-width:  250px;
     height: 400px;
     text-align: center;
     border-right: 1px solid #8d8c8c;
     background-color: #7aeaf0;
+    
   }
+
+  .logout-option{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ 
+  }
+  .logout-icon{
+    width: 25px;
+    height: 25px;
+  }
+
   </style>
