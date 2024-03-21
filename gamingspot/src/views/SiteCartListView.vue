@@ -121,9 +121,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 10px;
     align-items: center;
-    
-    background-color: #ffd500;
+    background-image: linear-gradient(to bottom, #003366, #0099ff);    
+    /* background-color: #ffd500; */
     width: 80%;
     min-height: 230px;
 

@@ -36,7 +36,7 @@ export default {
   width: 100%;
   max-height: 80px;
   /* height: 100%; */
-  background-color: #00254a;
+  background-color: #0470dc;
   border: none;
   color: white;
   padding: 15px 32px;

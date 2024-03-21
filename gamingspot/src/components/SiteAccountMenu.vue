@@ -65,13 +65,10 @@ export default {
     display: flex;
     flex-direction: column;
     
-    
+
     gap: 5px;
-
     background-image: linear-gradient(to bottom, #003366, #0099ff);
-
     min-width: 270px;
-    
     max-width: 300px;
   
   
@@ -79,8 +76,6 @@ export default {
     text-align: center;
     border-right: 1px solid #8d8c8c;
     background-color: #7aeaf0;
-
-    
   }
 
   .logout-option{
