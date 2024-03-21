@@ -10,7 +10,7 @@ import GameView from '../views/SiteGameView.vue';
 import GameDetail from '../views/SiteGameDeatails.vue';
 import ShippingDetailsView from '../views/SiteShippingDetails.vue';
 import SummaryView from '../views/SiteSummary.vue';
-
+import PaymentDetailsView from '@/views/SitePaymentDetailsView.vue';
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -78,6 +78,11 @@ const router = createRouter({
     name: 'SummaryView',
     component: SummaryView,
     props: { originalPrice: 15.55, discountedPrice: 13.25 }
+  },
+  {
+    path: '/payment',
+    name: 'PaymentDetails',
+    component: PaymentDetailsView
   }
   ]
 })

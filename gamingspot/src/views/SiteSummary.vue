@@ -28,7 +28,7 @@
 
         <div class="control-panel">
             <CustomButton text="Back" :onClick="toPrevSection"></CustomButton>
-            <CustomButton text="Proceed To Payment"></CustomButton>
+            <CustomButton text="Proceed To Payment" :onClick="toNextSection"></CustomButton>
         </div>
 
     </section>
@@ -65,6 +65,9 @@ export default {
     methods: {
         toPrevSection(){
             router.push('/shipping')
+        },
+        toNextSection(){
+            router.push('/payment')
         }
     }
 }

@@ -36,8 +36,10 @@
 </script>
 
 <style scoped>
-#nickname_entry {
 
+#nickname_entry {
+    
+    font-size: 20px;
     width: 90%;
     height: 35px;
     padding: 10px;

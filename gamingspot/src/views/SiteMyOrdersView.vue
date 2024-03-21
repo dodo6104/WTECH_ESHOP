@@ -1,11 +1,14 @@
 
 
 <template>
-    <section id="main-section">
-        <div class="components-container">
-            <AccountMenu @selected-button="handle_selected" :account_id="account_id"/>
+    <section class="main-section">
+        <AccountMenu  @selected-button="handle_selected" :account_id="account_id"/>
+
+        <section class="view-section">
+            <UnderlinedHeader text="My Orders"></UnderlinedHeader>
+            
             <MyOrders />
-        </div>
+        </section>
     
     </section>
 
@@ -16,6 +19,8 @@
 
 import AccountMenu from '../components/SiteAccountMenu.vue';
 import MyOrders from '../components/MyOrders/SiteMyOrders.vue'
+import UnderlinedHeader from '../components/general/SiteUnderlinedHeader.vue';
+
 
 export default {
     name: "MyOrdersView",
@@ -27,7 +32,8 @@ export default {
     },
     components: {
         AccountMenu,
-        MyOrders
+        MyOrders,
+        UnderlinedHeader
     },
     methods: {
         handle_selected(){
@@ -40,9 +46,21 @@ export default {
 
 <style scoped>
 
-.components-container {
+.main-section {
+    /* background-color: green; */
     width: 100%;
+    height: 100%;
     display: flex; /* Use flexbox to layout children horizontally */
+    flex-direction: row;
+}
+
+.view-section{
+    /* background-color: red; */
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 </style>

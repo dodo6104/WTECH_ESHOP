@@ -54,8 +54,14 @@ export default {
 <style scoped>
 .components-container {
     width: 100%;
+    height: 100%;
     display: flex; /* Use flexbox to layout children horizontally */
 }
 
+.account-menu {
+    width: 100%;
+    height: 100%;   
+}
 
-</style>../components/MyOrders/SiteMyOrders.vue../components/MyOrders/ks.vue
+
+</style>

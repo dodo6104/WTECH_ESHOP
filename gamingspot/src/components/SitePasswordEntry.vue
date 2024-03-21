@@ -54,6 +54,7 @@ input {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 20px;
 
     /* position: relative; Set position to relative to accommodate absolute positioning of the icon */
 }
@@ -69,6 +70,7 @@ input {
     width: 100%;
     position: relative;
     display: inline-block;
+    
 }
 
 .icon {
@@ -76,8 +78,9 @@ input {
     height: auto;
     position: absolute;
     top: 22%;
-    right: 5%;
+    right: 7%;
     cursor: pointer;
+
 }
 .valid-password {
     outline-color: green;

@@ -3,7 +3,7 @@
     <div class="button-content">
       
   
-    <span>{{ text }} </span>
+    <span class="button-label">{{ text }} </span>
     <slot></slot>
       </div>
   
@@ -34,8 +34,9 @@ export default {
 <style scoped>
 .custom-button {
   width: 100%;
-  height: 100%;
-  background-color: #09afd8;
+  max-height: 80px;
+  /* height: 100%; */
+  background-color: #00254a;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -45,21 +46,32 @@ export default {
   font-size: 27px;
   cursor: pointer;
   border-radius: 2px;
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+.button-label{
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .selected-button {
-  background-color: #020675;
-}
+    background-color: #020675;
+  }
+  
 
 .button-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 15px;
-  align-items: center;
-}
-
-.custom-button:hover {
-  background-color: #020675; /* Change to your desired hover color */
-}
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .custom-button:hover {
+    background-color: #020675;
+  }
+  
+  .click-hold {
+    background-color: #3a3a3a; /* Change to your desired click-and-hold color */
+  }
 </style>

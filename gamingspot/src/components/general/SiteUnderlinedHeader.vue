@@ -21,17 +21,19 @@
 
 <style scoped>
     .header-section {
-        border-bottom: 1px solid;
+        justify-content: left;
+        border-bottom: 3px solid;
         padding-bottom: 5px;
         /* padding-left: 25px; */
+        /* background-color: green; */
         margin-top: 10px;
-        margin-left: 30px;
-        margin-right: 30px;
+   
         margin-bottom: 20px;
+        width: 97%;
+    
     }
 
     .header {
         font-size: 33px;
-
     }
 </style>
