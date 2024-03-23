@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <button type="button" @click="$router.push('/')">
-      <div class="navbar-brand"><h1>GamingSpot</h1></div>
+      <div class="navbar-brand"><h1 class="navbar-brand-h1"> GamingSpot</h1> <h1><span class="short">GS</span></h1></div>
     </button>
     <div class="navbar-menu">
       <button class="platformButton" v-show="isVisible" @click="platformButtonClicked">
@@ -146,15 +146,16 @@ button {
   color: white;
 }
 
+
 .navbar-brand h1 {
   font-size: 40px;
 }
-
+.navbar-brand .short{
+  display: none;
+}
 .navbar-menu {
-  margin-left: 10%; 
   display: flex;
   font: 21px 'Roboto', sans-serif;
-  height: 100%;
   align-items: center;
 } 
 
@@ -165,10 +166,10 @@ button {
 }
     
 .navbar-item {
-  margin-right: 40px; 
-  text-align: right; 
   font: 21px 'Roboto', sans-serif;
   display: inline-block;
+  width: 120px;
+  text-align: center;
 }
   
 .navbar-search {
@@ -219,7 +220,7 @@ button {
   opacity: 0.8; 
 }
 
-@media (max-width: 1052px) {
+@media (max-width: 1091px) {
   .navbar {
     justify-content: flex-start;
   }
@@ -231,12 +232,51 @@ button {
   }
 }
 
-@media (max-width: 756px) {
+@media (max-width: 782px) {
   .navbar-menu {
     display: flex; 
     flex-direction: column;
     height: 100%;
     justify-content: center;
   }
+  .navbar-icons button {
+    margin-left: 0px; 
+  }
+  .navbar-item {
+    text-align: right;
+  }
+}
+
+@media (max-width: 756px) {
+  .navbar-icons {
+  padding-right: 0px;
+}
+
+  .navbar-icons button {
+    margin-left: 0px; 
+}
+.navbar-item {
+  margin-right: 0px; 
+  text-align: right;
+  margin-right: 20px;
+
+}
+}
+@media (max-width: 600px) {
+  .navbar-brand-h1 {
+    display: none;
+  }
+  .navbar-brand .short{
+    display: inline;
+}
+}
+@media (max-width: 400px) {
+  .navbar-brand-h1 {
+    display: none;
+  }
+  .navbar-brand .short{
+    display: none;
+  }
+  
 }
 </style>
