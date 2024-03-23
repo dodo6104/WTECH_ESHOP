@@ -1,0 +1,8 @@
+
+/* Enforces some rules for content sections which must be followed. Better not modify this. */
+.main-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}

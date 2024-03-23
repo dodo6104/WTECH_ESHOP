@@ -1,16 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/SiteHome.vue';
-import Login from '../views/SiteLogin.vue';
-import Register from '../views/SiteRegister.vue';
-import MyOrdersView from '../views/SiteMyOrdersView.vue';
-import PersonalDataView from '../views/SitePersonalDataView.vue';
-import PaymentInfoView from '../views/SitePaymentInfoView.vue';
-import CartListView from '../views/SiteCartListView.vue';
-import GameView from '../views/SiteGameView.vue';
-import GameDetail from '../views/SiteGameDeatails.vue';
-import ShippingDetailsView from '../views/SiteShippingDetails.vue';
-import SummaryView from '../views/SiteSummary.vue';
-import PaymentDetailsView from '@/views/SitePaymentDetailsView.vue';
+import Home from '../views/game/SiteHome.vue';
+import Login from '../views/account/SiteLoginView.vue';
+import Register from '../views/account/SiteRegisterView.vue';
+import MyOrdersView from '../views/account/SiteMyOrdersView.vue';
+import PersonalDataView from '../views/account/SitePersonalDataView.vue';
+import PaymentInfoView from '../views/account/SitePaymentInfoView.vue';
+import CartListView from '../views/payment/SiteCartListView.vue';
+import GameView from '../views/game/SiteGameView.vue';
+import GameDetail from '../views/game/SiteGameDetails.vue';
+import ShippingDetailsView from '../views/payment/SiteShippingDetailsView.vue';
+import SummaryView from '../views/payment/SiteSummaryView.vue';
+import PaymentDetailsView from '@/views/payment/SitePaymentDetailsView.vue';
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -49,19 +49,28 @@ const router = createRouter({
     path: '/account=:y/my_orders',
     name: 'MyOrders',
     component: MyOrdersView,
-    props: route => ({ account_id: route.params.y })
+    props: route => ({
+      account_id: route.params.y,
+      selected_button: route.query.selected_button // Assuming selected_button is passed as a query parameter
+    })
   },
   {
     path: '/account=:z/personal_data',
     name: 'PersonalData',
     component: PersonalDataView,
-    props: route => ({ account_id: route.params.z })
+    props: route => ({
+      account_id: route.params.z,
+      selected_button: route.query.selected_button // Assuming selected_button is passed as a query parameter
+    })
   },
   {
     path: '/account=:u/payment_info',
     name: 'PaymentInfo',
     component: PaymentInfoView,
-    props: route => ({ account_id: route.params.u })
+    props: route => ({
+      account_id: route.params.u,
+      selected_button: route.query.selected_button // Assuming selected_button is passed as a query parameter
+    })
   },
   {
     path: '/cart',

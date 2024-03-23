@@ -67,7 +67,9 @@ export default {
   height: auto;
 }
 
-.game-frame{
+.game-frame {
+  background-color: red;
+ 
   border: solid 1px;
   align-items: center;
   text-align: center;
@@ -100,7 +102,7 @@ export default {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; 
 }
 
 .game-button:hover button {
