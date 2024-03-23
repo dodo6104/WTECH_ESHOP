@@ -48,5 +48,17 @@
     justify-content: center; 
 }
   
+@media (max-width: 920px) {
+  .product-grid { 
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 630px) {
+  .product-grid { 
+    grid-template-columns: auto;
+    padding: 0px 0px 0px 0px;
+  }
+}
 </style>
   
