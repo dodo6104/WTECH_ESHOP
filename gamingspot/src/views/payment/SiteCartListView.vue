@@ -113,11 +113,12 @@
   <style src="../../styles/sections/main_section.css"></style>;
   <style src="../../styles/sections/content_section.css"></style>;
   <style src="../../styles/buttons/SiteSubmitButton.css"></style>;
+  <style src="../../styles/sections/SiteLowerControlPanel.css"></style>;
 
   <style scoped>
   
   .cart-list {
-    background-image: linear-gradient(to top, #1900ff, #021163);
+    /* background-image: linear-gradient(to top, #1900ff, #021163); */
     width: 90%;
     min-height: 200px;
     display: flex;
@@ -125,22 +126,24 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    border-bottom: 2px solid;
+    
     padding-top: 3px;
     padding-bottom: 3px;
     margin-bottom: 10px;
   }
   
-  .control-panel{
-    padding: 5px;
-    width: 80%;
+  /* .control-panel{
+    border-top: 2px solid;
+    padding-top: 10px;
+    width: 90%;
+ 
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 15px;
     justify-content: space-between;
-  }
+  } */
 
 
   .back-button-div{

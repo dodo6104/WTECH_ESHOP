@@ -58,4 +58,13 @@ export default{
     width: 50%;
 }
 
+@media only screen and (max-width: 500px){
+
+
+    .row{
+        flex-direction: column;
+        align-items: center;
+        gap: 0px
+    }
+}
 </style>

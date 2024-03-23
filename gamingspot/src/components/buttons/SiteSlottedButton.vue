@@ -29,7 +29,7 @@ export default {
     // Additional props for customization
     buttonStyle: {
       type: String,
-      default: 'default' // Default style
+      default: 'primary' // Default style
     }
   },
   computed: {

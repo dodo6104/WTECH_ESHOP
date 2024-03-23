@@ -4,7 +4,7 @@
         <PasswordEntry class="password-frame" inputId="password_frame_1"/>
         <PasswordEntry class="password-frame" inputId="password_frame_2" placeholder="New Password"/>
         <PasswordEntry class="password-frame" inputId="password_frame_3" placeholder="Retype Password"/>
-        <CustomButton text="Save"/>
+        <Button class="submit-button">Save</Button>
     </section>
 </template>
 
@@ -12,36 +12,33 @@
 
 import NicknameEntry from '../entries/SiteNicknameEntry.vue';
 import PasswordEntry from '../entries/SitePasswordEntry.vue';
-import CustomButton from '../buttons/SiteSaveButton.vue';
 
 
 export default {
     name: "PersonalData",
     components: {
         NicknameEntry,
-        PasswordEntry,
-        CustomButton
-    }
+        PasswordEntry    }
 }
 </script>
 
+<style src="../../styles/buttons/SiteSubmitButton.css"></style>;
+
+
 <style scoped>
-
-
 
 .view-section {
     background-color: rgb(255, 255, 255);
     padding-top: 40px;
     display: flex;
-    flex-direction: column; /* Arrange children vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: 350px;
+    min-width: 300px;
     width: 40%;
     padding-bottom: 10px;
     padding-left: 8px;
-    /* margin: 10px; */
-    
     border: 1px solid;
 }
 
@@ -53,8 +50,13 @@ export default {
 
 .password-frame {
     width: 300px;
-    margin-bottom: 10px; /* Add margin between PasswordFrames */
-    
+    margin-bottom: 10px;
 }
+
+.submit-button{
+    width: 70%;
+}
+
+
 
 </style>

@@ -10,7 +10,7 @@
 
             <section class="payment-options">
                 
-                <div class="upper-payment-section">
+                <div class="option-section">
                     <SlottedButton class="slotted-button" text="VISA" @button-selected="handleSelected" index="0" :isSelected="selectedButton === '0'">
                         <img class="visa-icon" src="../../assets/icons/visa.png">
                     </SlottedButton>
@@ -21,7 +21,7 @@
                     </SlottedButton>
                 </div>
 
-                <div class="lower-payment-section">
+                <div class="option-section">
                     <SlottedButton class="slotted-button" text="PayPal" @button-selected="handleSelected" index="2" :isSelected="selectedButton === '2'">
                         <img class="paypal-icon" src="../../assets/icons/paypal.png">
                     </SlottedButton>
@@ -94,28 +94,29 @@ export default {
 
 <style src="../../styles/sections/main_section.css"></style>;
 <style src="../../styles/sections/content_section.css"></style>;
+<style src="../../styles/sections/SiteLowerControlPanel.css"></style>
 
 <style src="../../styles/buttons/SiteSubmitButton.css"></style>;
 
 <style scoped>
 
 
-
-
 .slotted-button{
     border: 1px solid;
     border-color: black;
-    width: 25%;
+    width: 50%;
+}
 
-    min-width: 270px
+.submit-button{
+    margin: 5px
 }
 
 .payment-details{
-    background-image: linear-gradient(to top, #13ffe0, #139624);
+    /* background-image: linear-gradient(to top, #13ffe0, #139624); */
     display: flex;
     flex-direction: column;
     justify-content: left;
-
+    width: 97%;
 
     gap: 15px;
 
@@ -124,15 +125,15 @@ export default {
 .payment-options{
     display: flex;
     flex-direction: row;
+    width: 100%
 }
 
 .payment-info-wrapper{
-
     display: flex;
     flex-direction: row;
     align-items: bottom;
     width: 100%;
-
+    
 }
 
 .view-section{
@@ -180,43 +181,45 @@ export default {
     height: auto;
 }
 
-.lower-payment-section, .upper-payment-section {
+.option-section {
     display: flex;
     flex-direction: row;
+    width: 50%;
 }
 
-.control-panel{
-    width: 100%;
-    max-width: 1100px;
-    display: flex;
-    justify-content: left;
-    padding-left: 20px;
-}
 
-@media only screen and (max-width: 1160px){
+@media only screen and (max-width: 1200px){
     .payment-details{
-        width: 540px;
+        min-width: 600px;
+        width: 60%;
+        justify-content: center;
+        align-items: center
     }
     .payment-options{
+
         flex-direction: column;
         gap: 0px;
         justify-content: left;
     }
     .payment-info-wrapper{
+
         width: 540px;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
     .payment-info{
-        min-width: 538px;
+        min-width: 550px;
     }
 
     .control-panel{
         justify-content: center;
+        padding-left: 0px;
     }
-
-
+    
+    .option-section{
+        width: 100%;
+    }
 
 }
 

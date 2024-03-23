@@ -1,17 +1,20 @@
 <template>
   <div class="account-menu">
 
+    <div class="option-row">
     <SlottedButton :text="'My Orders'" index="1" :isSelected="selectedButton === '1'" @button-selected="handleSelected" buttonStyle="primary"></SlottedButton>
-
     <SlottedButton :text="'Personal Data'" index="2" :isSelected="selectedButton === '2'" @button-selected="handleSelected" buttonStyle="primary"></SlottedButton>
+    </div>
 
-    <SlottedButton :text="'Payment Info'" index="3" :isSelected="selectedButton === '3'" @button-selected="handleSelected" buttonStyle="primary"></SlottedButton>
+    <div class="option-row">
+      <SlottedButton :text="'Payment Info'" index="3" :isSelected="selectedButton === '3'" @button-selected="handleSelected" buttonStyle="primary"></SlottedButton>
 
 
-    <div class="logout-option">
-      <SlottedButton text="Log Out" @button-selected="logOut" image_src="../../assets/icons/logout.png" buttonStyle="primary">
-        <img class="logout-icon" src="../../assets/icons/logout.png" />
-      </SlottedButton>
+      <div class="logout-option">
+        <SlottedButton text="Log Out" @button-selected="logOut" image_src="../../assets/icons/logout.png" buttonStyle="primary">
+          <img class="logout-icon" src="../../assets/icons/logout.png" />
+        </SlottedButton>
+      </div>
     </div>
   </div>
 </template>
@@ -76,38 +79,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* styles remain the same */
-
-  .account-menu {
-   
-    display: flex;
-    flex-direction: column;
-    
-
-    gap: 5px;
-    background-image: linear-gradient(to bottom, #003366, #0099ff);
-    min-width: 270px;
-    max-width: 300px;
-  
-  
-    height: 100vh;
-    text-align: center;
-    border-right: 1px solid #8d8c8c;
-    background-color: #7aeaf0;
-  }
-
-  
-  .logout-option{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
- 
-  }
-  .logout-icon{
-    width: 25px;
-    height: 25px;
-  }
-
-  </style>
+<style src="../../styles/sections/SiteAccountMenu.css"></style>
