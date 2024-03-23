@@ -94,5 +94,17 @@ export default {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .info-row{
+        width: 100%;
+        /* background-color: green; */
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
+        gap: 0px;
+    }
+}
+
 
 </style>

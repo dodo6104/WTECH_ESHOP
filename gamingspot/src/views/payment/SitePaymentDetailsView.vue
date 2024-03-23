@@ -128,19 +128,24 @@ export default {
     width: 100%
 }
 
-.payment-info-wrapper{
-    display: flex;
-    flex-direction: row;
-    align-items: bottom;
-    width: 100%;
-    
-}
-
 .view-section{
     margin: 5px;    
 }
 
+.payment-info-wrapper{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    align-items: bottom;
+    min-width: none;
+    width: 100%;
+    
+}
+
+
+
 .payment-info, .payment-info-disabled {
+    /* background-color: red; */
     
     width: 50%;
     border: 1px solid;
@@ -159,6 +164,7 @@ export default {
 }
 
 .pay-button-wrapper{
+    /* background-color: blue; */
     display: flex;
     flex-direction: column;
 
@@ -190,26 +196,30 @@ export default {
 
 @media only screen and (max-width: 1200px){
     .payment-details{
-        min-width: 600px;
+        
         width: 60%;
         justify-content: center;
         align-items: center
     }
     .payment-options{
 
+        min-width: 600px;
         flex-direction: column;
         gap: 0px;
         justify-content: left;
     }
     .payment-info-wrapper{
 
-        width: 540px;
+        /* width: 140px; */
+        min-width: 500px;
+        width: 100%;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
     .payment-info{
-        min-width: 550px;
+        width: 100%;
+        /* min-width: 550px; */
     }
 
     .control-panel{
@@ -219,6 +229,35 @@ export default {
     
     .option-section{
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .option-section{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+
+    .payment-info-wrapper{
+        min-width: 300px;
+        width: 100%;
+    }
+
+    .payment-info, .payment-info-disabled{
+        /* background-color: red; */
+        width: 100%;
+    }
+
+    .pay-button-wrapper{
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .pay-button{
+        width: 80%;
     }
 
 }

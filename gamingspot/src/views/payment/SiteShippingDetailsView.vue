@@ -135,7 +135,7 @@ export default {
 .shipping-details{
     /* background-color: green; */
     max-width: 700px;
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,7 +194,7 @@ export default {
 
 
 /* Responsive adjustments */
-@media only screen and (max-width: 690px) {
+@media only screen and (max-width: 700px) {
     .detail-row {
         flex-direction: column; /* Change to column layout on smaller screens */
         width: 60%;
@@ -202,9 +202,6 @@ export default {
 
     .shipping-details{
         width: 90%;
-    }
-    .control-panel{
-        width: 100%;
     }
 }
 

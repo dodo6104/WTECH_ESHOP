@@ -41,3 +41,19 @@
         width: 40%;
     }
 }
+
+@media only screen and (max-width: 480px) {
+    .account-menu {
+        min-height: 170px;
+        flex-direction: column;
+        max-height: 80px;
+        align-items: center;
+    }
+
+    .option-row {
+        flex-direction: column;
+        min-width: 240px;
+        width: 40%;
+    }
+
+}

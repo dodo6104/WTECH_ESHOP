@@ -19,7 +19,9 @@
               <CartListItem v-for="(item, index) in cartItems" :key="item.name" :index="index + 1" :name="item.name" :price="item.price" @remove-event="(count) => handleRemove(index, item.price, count)"
                   @increment-event="handle_increment" @decrement-event="handle_decrement"></CartListItem>
               
+              
               <div class="total-price-wrapper">
+
                 <div class="total-price-frame">
                   <div>
                     <label class="total-price-label" for=".total-price">Total:</label>
@@ -132,19 +134,6 @@
     margin-bottom: 10px;
   }
   
-  /* .control-panel{
-    border-top: 2px solid;
-    padding-top: 10px;
-    width: 90%;
- 
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    justify-content: space-between;
-  } */
-
 
   .back-button-div{
 
@@ -163,15 +152,19 @@
   }
 
   .total-price-wrapper{
-    max-width: 700px;
+    /* background-color: red; */
+    min-width: 300px;
+    max-width: 800px;
     display: flex;
     justify-content: right;
     width: 90%;
-    padding-right: 204px;
+    
+    /* padding-right: 204px; */
   }
 
   .total-price-frame {
-    background-color: red;
+    margin-right: 127px;
+    /* background-color: red; */
 
     width: 200px;
     display: flex;

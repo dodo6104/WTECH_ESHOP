@@ -38,10 +38,11 @@ export default{
 
 <style scoped>
 .pay-button {
-  width: 200px;
   height: 70px;
   width: 300px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 20px;
   font-size: 30px;
   font-weight: bold;

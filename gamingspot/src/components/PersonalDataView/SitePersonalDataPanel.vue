@@ -28,7 +28,10 @@ export default {
 <style scoped>
 
 .view-section {
-    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    /* background-color: rgb(255, 255, 255); */
     padding-top: 40px;
     display: flex;
     flex-direction: column;
@@ -39,10 +42,10 @@ export default {
     width: 40%;
     padding-bottom: 10px;
     padding-left: 8px;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
-.nickname-frame {
+/* .nickname-frame {
     width: 300px;
     width: 100%;
 
@@ -51,7 +54,7 @@ export default {
 .password-frame {
     width: 300px;
     margin-bottom: 10px;
-}
+} */
 
 .submit-button{
     width: 70%;

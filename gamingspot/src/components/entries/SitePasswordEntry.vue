@@ -1,10 +1,10 @@
 <template>
-    <section>
-        <div class="password-wrapper">
-            <img class="icon" src="../../assets/icons/show.png" alt="Show Password" @click="togglePasswordVisibility">
-            <input class="password-input" type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
-        </div>
-    </section>
+
+    <div class="password-wrapper">
+        <img class="icon" src="../../assets/icons/show.png" alt="Show Password" @click="togglePasswordVisibility">
+        <input class="password-input" type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
+    </div>
+
 </template>
 
 <script>    
@@ -44,9 +44,18 @@ export default {
 </script>
 
 <style scoped>
+
+.password-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+
 .password-input {
     font-size: 17px;
-    width: calc(100% - 30px); /* Adjusted width to accommodate the icon */
+    width: 100%;
+    /* width: calc(100% - 30px); */
     height: 35px;
     padding: 10px;
     margin-bottom: 10px;
@@ -55,11 +64,7 @@ export default {
     font-size: 17px;
 }
 
-.password-wrapper {
-    width: 100%;
-    position: relative;
-    display: inline-block;
-}
+
 
 .icon {
     width: 27px;
