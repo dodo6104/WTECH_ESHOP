@@ -11,6 +11,10 @@ import GameDetail from '../views/game/SiteGameDetails.vue';
 import ShippingDetailsView from '../views/payment/SiteShippingDetailsView.vue';
 import SummaryView from '../views/payment/SiteSummaryView.vue';
 import PaymentDetailsView from '@/views/payment/SitePaymentDetailsView.vue';
+import AdminPanel from '../views/SiteAdmin.vue';
+import AddEdit from '../views/SiteAddEdit.vue';
+
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -92,7 +96,17 @@ const router = createRouter({
     path: '/payment',
     name: 'PaymentDetails',
     component: PaymentDetailsView
-  }
+  },
+  {
+    path: '/adminpanel',
+    name: 'AdminPanel',
+    component: AdminPanel
+  },
+  {
+    path: '/addedit',
+    name: 'AddEdit',
+    component: AddEdit
+  },
   ]
 })
 

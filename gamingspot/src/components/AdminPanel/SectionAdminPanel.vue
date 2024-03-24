@@ -7,10 +7,10 @@
   </template>
   
   <script>
-  import SiteProduct from './SiteProduct.vue';
+  import SiteProduct from './SiteAdminProduct.vue';
   
   export default {
-    name: 'SiteGameViewSection',
+    name: 'SectionAdminPanel',
     components: {
       SiteProduct
     },

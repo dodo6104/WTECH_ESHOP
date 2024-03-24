@@ -168,10 +168,11 @@ button {
     
 .navbar-item {
   font: 21px 'Roboto', sans-serif;
-  display: inline-block;
+  display: flex;
   width: 120px;
   text-align: center;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
   min-height: 110px;
 }
   
@@ -285,5 +286,8 @@ button {
     display: none;
   }
   
+  .navbar-search input {
+    width: 100px;
+  }
 }
 </style>

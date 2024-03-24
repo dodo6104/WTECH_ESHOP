@@ -64,12 +64,10 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: solid black; 
-  padding-bottom: 40px;
-  border-width: 0px 0 1px 0px;
 }
 
 .FilterButton {
+  border: 1px solid black;
   font-size: 15px;
   width: 130px;
   height: 50px;
@@ -80,13 +78,11 @@ export default {
 
 .FilterButton.active {
   background-color: #024f9d;
-  color: white; 
+  color: white;
 }
-
-@media (max-width: 620px) {
-  .gameFilters {
-    display: grid;
-    grid-template-columns: auto auto;
-  }
+.gameItems {
+  margin-top: 40px;
+  border: solid black; 
+  border-width: 1px 0px 0px 0px;
 }
 </style>

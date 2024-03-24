@@ -7,7 +7,9 @@
       <h2 class="game-name">{{ name }}</h2>
       <p class="platform">{{ platform }}</p>
       <p class="price">{{ price }}</p>
-      <button class="add-to-cart" @click.stop="addToCart">Add to Cart</button>
+      <button class="add-to-cart" @click.stop="editproduct">Edit Product</button>
+      <button class="remove-product" @click.stop="removeproduct">Remove Product</button>
+
     </div>
   </div>
 </template>
@@ -35,11 +37,11 @@ export default {
     }
   },
   methods: {
-    onCardClick() {
-      this.$router.push({ path: '/gamedetail' });
+    editproduct() {
+      this.$router.push({ path: '/addedit' });
     },
-    addToCart() {
-      console.log("Add cart")
+    removeproduct() {
+      console.log("remove")
     }
   }
 }
@@ -89,10 +91,29 @@ export default {
   width: 200px;
   height: 50px;
   border-radius: 20px;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .add-to-cart:hover {
   background-color: rgb(205, 239, 68);
   }
+
+.remove-product {
+  background-color: red;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.remove-product:hover {
+  background-color: rgb(253, 82, 82);
+}
 </style>
