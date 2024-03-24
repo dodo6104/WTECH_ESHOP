@@ -1,0 +1,36 @@
+
+
+.transitioned-button {
+    background-color: #09afd8;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 27px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.3s ease; /* Add transition effect */
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 100%;
+  }
+  
+  .selected-button {
+    background-color: #00069d;
+  }
+  
+  .button-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .transitioned-button:hover {
+    background-color: #00069d;
+  }
+  
+  .click-hold {
+    background-color: #3a3a3a; /* Change to your desired click-and-hold color */
+  }

@@ -1,0 +1,28 @@
+.select-widget{
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Set width to 100% */
+    box-sizing: border-box;
+    
+}
+
+
+/* Option elements */
+.select-widget option {
+    font-size: 16px;
+    /* font-weight: bold; */
+}
+
+/* Selected option style */
+.select-widget option:checked {
+    background-color: #00a2ff;
+    color: #ff9900;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.select-widget option:hover {
+    background-color: #ffffff;
+}
