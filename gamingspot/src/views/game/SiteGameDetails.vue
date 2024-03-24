@@ -3,21 +3,26 @@
         <section class="FirstSection">
             <GamePicture picture-url = "https://upload.wikimedia.org/wikipedia/en/5/5f/Dishonored_2_cover_art.jpg" class="GamePicture"/>
             <div class="GameInfoContainer">
+                
                 <GameInfo 
                 :platforms="['PC', 'Xbox One', 'PS4']"
 
                 name-of-the-game="Dishonored 2" 
                 text-of-description="Dishonored 2 is set 15 years after the Lord Regent has been vanquished and the dreaded Rat Plague has passed into history. An otherworldly usurper has seized Empress Emily Kaldwin’s throne, leaving the fate of the Isles hanging in the balance. As Emily or Corvo, travel beyond the legendary streets of Dunwall to Karnaca, the once-dazzling coastal city that holds the keys to restoring Emily to power. Armed with the Mark of the Outsider and powerful new abilities, track down your enemies and take back what’s rightfully yours." 
                 />
+                <div class="StarRatingMin"><StarRating :rating="60" :ratingfont="'3.5rem'"/></div>
+
                 <ShoppingPanel old-price-value = "30" new-price-value = "25"/>
-                <StarRating  :rating="50" :ratingfont="'3.5rem'"/>
+                <div class="StarRatingMax"><StarRating :rating="60" :ratingfont="'3.5rem'"/></div>
             </div>
         </section>
         <section class="SecondSection">
-            <GameVideo video-url="366P5JjdO0g" class="VideoTrailer"/>
+            <GameVideo  videowidth = "550" videoheight = "310" video-url="366P5JjdO0g" class="Firstvideo"/>
+            <GameVideo videowidth = "auto" videoheight = "auto" video-url="366P5JjdO0g" class="Secondvideo"/>
             <SystemRequirements class = "SystemRequirements"/>
         </section>
         <section class="Thirdsection">
+            <AddReviewStars />
             <div class="Reviews">
                 <h2>Reviews</h2> 
                 <Review class="ReviewComp"/>
@@ -40,7 +45,7 @@ import SystemRequirements from '../../components/GameView/SiteSystemRequirements
 import ShoppingPanel from '../../components/GameView/SiteShoppingPanel.vue';
 import StarRating from '../../components/GameView/SiteStarRating.vue';
 import Review from '../../components/GameView/SiteReview.vue';
-
+import AddReviewStars from '../../components/GameView/SiteAddReview.vue';
 
 
 
@@ -53,7 +58,8 @@ components: {
     SystemRequirements,
     ShoppingPanel,
     StarRating,
-    Review
+    Review,
+    AddReviewStars
 },
 }
 </script>
@@ -78,8 +84,16 @@ components: {
     padding-right: 2%;
 }
 
-.VideoTrailer {
+.StarRatingMin {
+    display: none;
+}
+
+.Firstvideo {
     padding-right: 20px;
+}
+
+.Secondvideo {
+    display: none;
 }
 
 .Thirdsection {
@@ -93,8 +107,9 @@ components: {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 5px 20px 5px 20px;
     background: linear-gradient(to bottom, #ffffff, #f7f7f7);
-
+    margin-top: 20px;
 }
+
 
 .Reviews h2 {
     padding-bottom: 1%;
@@ -114,14 +129,48 @@ components: {
 
 @media (max-width: 975px) {
     .FirstSection, .SecondSection, .Thirdsection {
+        margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .GameInfoContainer {
+        margin-top: 20px;
     }
     .SystemRequirements {
         margin-top: 2%;
     }
+    .Firstvideo {
+    padding-right: 0px;
+    }
+}
 
+@media (max-width: 600px) {
+    .ShoppingPanel {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+    }
+    .StarRatingMin {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Zarovná deti (obsah) na stred vertikálne */
 
+    }
+    .StarRatingMax {
+        display: none;
+    }
+    
+    .Firstvideo {
+        display: none;
+    }
+
+    .Secondvideo {
+        display: inline;
+    }
+
+    
 }
 
 </style>
