@@ -9,14 +9,14 @@
 
                 <div class="shipping-details">
                     <div class="detail-row">
-                        <select class="shipping-options">
+                        <select class="select-widget">
                             <option>Type of Shipping</option>
                             <option value="option-1">Local Post Service</option>
                             <option value="option-2">GLS Delivery Service</option>
                             <option value="option-3">DHL Express</option>
                         </select>
 
-                        <select class="country-options" @change="fetchCities">
+                        <select class="select-widget" @change="fetchCities">
                             <option disabled selected value="">Country</option>
                             <option value="AT">Austria</option>
                             <option value="AU">Australia</option>
@@ -51,16 +51,16 @@
                     </div>
 
                     <div class="detail-row">
-                        <input class="post-code-input" placeholder="Post Code">
-                        <select class="city-options">
+                        <input class="select-widget" placeholder="Post Code">
+                        <select class="select-widget">
                             <option disabled selected value="">City</option>
                             <!-- Cities will be populated dynamically -->
                         </select>
                     </div>
 
                     <div class="detail-row">
-                        <input class="address-input" placeholder="Address">
-                        <input class="phone-input" type="number" placeholder="Phone">
+                        <input class="select-widget" placeholder="Address">
+                        <input class="select-widget" type="number" placeholder="Phone">
                     </div>
 
                     
@@ -128,12 +128,12 @@ export default {
 <style src="../../styles/sections/SiteLowerControlPanel.css"></style>
 
 <style src="../../styles/buttons/SiteSubmitButton.css"></style>;
+<style src="../../styles/inputs/SiteSelectWidget.css"></style>;
 
 <style scoped>
 
 
 .shipping-details{
-    /* background-color: green; */
     max-width: 700px;
     width: 70%;
     display: flex;
@@ -153,45 +153,17 @@ export default {
 .detail-row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     width: 100%;
     gap: 15px;
 }
 
-/* Select and input elements */
-.shipping-options,
-.country-options,
-.post-code-input,
-.city-options,
-.address-input,
-.phone-input {
-    font-size: 16px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%; /* Set width to 100% */
-    box-sizing: border-box;
+.select-widget{
+    min-width: 200px;
+    max-width: 400px;
 }
-
-/* Option elements */
-.shipping-options option {
-    font-size: 16px;
-}
-
-/* Selected option style */
-.shipping-options option:checked {
-    background-color: #f0f0f0;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Hover effect */
-.shipping-options option:hover {
-    background-color: #eaeaea;
-}
-
-
-
 
 /* Responsive adjustments */
 @media only screen and (max-width: 700px) {

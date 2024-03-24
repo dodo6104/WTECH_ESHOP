@@ -2,7 +2,7 @@
 
     <div class="password-wrapper">
         <img class="icon" src="../../assets/icons/show.png" alt="Show Password" @click="togglePasswordVisibility">
-        <input  :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid}" @input="checkPasswordValidity($event)">
+        <input type="password" :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid}" @input="checkPasswordValidity($event)" :id="inputId">
     </div>
 
 </template>
@@ -14,7 +14,10 @@ export default {
             type: String,
             default: 'Password' // Default placeholder value
         },
-        inputId: String // Unique identifier for the input element
+        inputId: {
+            type: String,
+            required: true
+        } 
     },
     data() {
         return {
@@ -31,12 +34,13 @@ export default {
         },
 
         togglePasswordVisibility() {
-            this.passwordVisible = !this.passwordVisible; // Toggle the flag
-            const input = document.getElementById(this.inputId);
+            this.passwordVisible = !this.passwordVisible; // Toggles the flag
+            const input = document.getElementById(this.inputId); // Here we get the element
+                                                                // by its ID
             if (this.passwordVisible) {
-                input.type = 'text'; // Show password
+                input.type = 'text'; // Shows password
             } else {
-                input.type = 'password'; // Hide password
+                input.type = 'password'; // Hides password
             }
         }
     }
@@ -55,7 +59,6 @@ export default {
 .password-input, .valid-password, .invalid-password {
     font-size: 17px;
     width: 100%;
-    /* width: calc(100% - 30px); */
     height: 35px;
     padding: 10px;
     margin-bottom: 10px;
@@ -63,7 +66,6 @@ export default {
     border-radius: 5px;
     font-size: 17px;
 }
-
 
 
 .icon {

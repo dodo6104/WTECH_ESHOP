@@ -8,10 +8,18 @@
         
         
         <div class="order-control-panel">
-            <div class="game-price-frame">
+            <div class="price-quantity-frame">
                 <label class="game-price">{{ modifiable_price.toFixed(2) }}€</label>
                 <QuantityCounter class="count-selector" @increment-event="handleIncrement" @decrement-event="handleDecrement"/>
             </div>
+
+            <select class="select-widget">
+                <option>KEY</option>
+                <option>CD</option>
+                <option>DVD</option>
+                <option>ITEM</option>
+
+            </select>
 
             <img class="trash-icon" src="../../assets/icons/trash.png" @click="$emit('remove-event', this.count)">
 
@@ -38,7 +46,11 @@ export default {
         price: {
             type: Number,
             required: true
-        }
+        },
+        // form: {
+        //     type: String,
+        //     required: true
+        // }
     },
     components: {
         QuantityCounter
@@ -65,6 +77,8 @@ export default {
 }
 </script>
 
+<style src="../../styles/inputs/SiteSelectWidget.css"></style>;
+
 <style>
 .order-frame {
     display: flex;
@@ -73,18 +87,20 @@ export default {
     margin: 5px;
     width: 90%;
     max-width: 800px;
-    /* margin-left: 20px;
-    margin-right: 20px; */
-    background-color: #CED1D9; /* Use a non-contrasting background color */
+    background-color: #CED1D9; 
     gap: 15px;
-    /* min-width: 70px; */
     padding: 8px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .index-name-wrapper{
-    width: 70%;
+    width: 65%;
+    /* box-sizing: border-box; */ /* Content-box's height or width applies solely for elements, not
+                                    for padding or border, border box is consistent.*/
+    white-space: nowrap; /* Will not wrap the text if it exceeds its limits */
+    overflow: hidden; /* Hides the text if it exceeds its limits */
+    text-overflow: ellipsis; /* Inserts ellipsis (...) after text if it exceeds its limits */
 }
 
 .game-index {
@@ -92,17 +108,13 @@ export default {
 }
 
 .game-name {
-    flex: 1; /* Allow the game name label to take up remaining space */
+    flex: 1;
     font-size: 20px;
     margin-left: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .order-control-panel{
-    /* background-color: green; */
-    width: 30%;
+    width: 35%;
     min-width: 200px;
     display: flex;
     flex-direction: row;
@@ -110,13 +122,12 @@ export default {
     align-items: center;
 }
 
-.game-price-frame {
+.price-quantity-frame {
     width: 70%;
-    
-    /* background-color: red; */
+
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
 
     gap: 15px;
@@ -128,37 +139,36 @@ export default {
 }
 
 .count-selector {
-    
     width: 50px;
 }
 
-.trash-icon {
+.select-widget{
+    min-width: 85px;
+    max-width: 85px;
+}
 
+.trash-icon {
     width: 27px;
     height: auto;
     cursor: pointer;
     margin-left: 5px;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 840px){
     .order-frame{
         flex-direction: column;
     }
 
     .order-control-panel{
-        /* background-color: green; */
         width: 100%;
-        /* background-color: red; */
     }
 
     .game-price-frame{
-        
         max-width: 160px;
     }
 
     .index-name-wrapper{
         width: 100%;
-        /* background-color: red; */
     }
 }
 

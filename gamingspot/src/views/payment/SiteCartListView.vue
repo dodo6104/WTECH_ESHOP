@@ -39,14 +39,15 @@
 
             
         </div>
-
+      
+      <div class="control-panel">
+        <button class="submit-button" type="submit" :onClick="toPrevSection">Back</button>
+        <button :class="{'submit-button-disabled': isDisabled, 'submit-button': !isDisabled}" type="submit" text="Continue" :onClick="handle_click">Continue</Button>
+      </div>
     </section>
 
 
-    <div class="control-panel">
-        <button class="submit-button" type="submit" :onClick="toPrevSection">Back</button>
-        <button :class="{'submit-button-disabled': isDisabled, 'submit-button': !isDisabled}" type="submit" text="Continue" :onClick="handle_click">Continue</Button>
-    </div>
+    
   </template>
   
   <script>
@@ -68,7 +69,7 @@
         isDisabled: false, // Initially enabled
         cartItems: [
           { name: "Gta V", price: 15.60 },
-          { name: "Assassin's Creed Valhalla", price: 19.35 },
+          { name: "Assassin's Creed Valhallaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", price: 19.35 },
           { name: "The Witcher 3: Wild Hunt", price: 13.75 },
           { name: "Civilization VI", price: 26.36 },
         ],
