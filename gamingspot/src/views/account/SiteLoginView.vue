@@ -19,15 +19,6 @@ export default{
 
 </script>
 
+
+
 <style src="../../styles/sections/SiteContentWrapper.css"></style>;
-
-<!-- <style>
-
-  .login-wrapper {
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-    width: 100%;
-  }
-
-</style> -->

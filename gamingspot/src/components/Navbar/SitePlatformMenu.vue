@@ -93,12 +93,12 @@ export default {
 }
 
 .platform-selected {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: white;
 }
 
 .platform-not-selected {
-  background-color: #f4f4f4; /* Light grey */
+  background-color: #f4f4f4;
   color: black;
 }
 

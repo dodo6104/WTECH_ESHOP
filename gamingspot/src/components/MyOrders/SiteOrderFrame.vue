@@ -4,10 +4,10 @@
     <section id="main-section">
         
         <div class="game-frame">
+
           <div class="pics">
             <img class="game-image" src="../../assets/pics/gta_v_game.jpg" alt="GTA V Game Image">
             <img class="info-icon" src="../../assets/icons/info.png" alt="Info Icon">
-
           </div>
 
           <div class="game-details">
@@ -20,13 +20,13 @@
           </div>
           
         </div>
-
     </section>
 
 </template>
 
-<script>
 
+
+<script>
 
 export default {
     name: "MyOrders",
@@ -36,13 +36,12 @@ export default {
 </script>
 
 
+
 <style>
 
-
 #main-section {
-    /* width: 100%; */
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Arrange children vertically */
+    display: flex; 
+    flex-direction: column; 
 }
 
 #view-section {
@@ -52,8 +51,6 @@ export default {
     border-top: 1px solid;
     display: flex;
     flex-direction: column;
-    /* margin-left: 20px; */
-    /* margin-right: 20px; */
 }
 
 .pics{
@@ -69,7 +66,6 @@ export default {
 
 .game-frame {
   background-color: red;
- 
   border: solid 1px;
   align-items: center;
   text-align: center;
@@ -113,6 +109,5 @@ export default {
   background-color: #0056b3;
   transform: translateY(1px);
 }
-
 
 </style>
