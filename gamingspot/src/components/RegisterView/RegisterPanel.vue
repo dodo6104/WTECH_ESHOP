@@ -31,5 +31,5 @@ export default {
 
 </script>
 
-<style src="../../styles/buttons/SiteSubmitButton.css"></style>
-<style src="../../styles/sections/SiteInputPanel.css"></style>
+<style src="../../styles/buttons/SiteSubmitButton.css"></style>;
+<style src="../../styles/sections/SiteInputPanel.css"></style>;
