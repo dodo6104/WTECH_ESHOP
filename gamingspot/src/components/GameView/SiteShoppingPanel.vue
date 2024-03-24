@@ -105,11 +105,18 @@ export default {
 }
 
 .AddToCartButton {
-    width: 200px;
-    height: 40px;
-    background-color: grey;
+    width: 250px;
+    height: 50px;
+    background-color: #a1c900;
     border-radius: 20px;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.AddToCartButton:hover {
+    background-color: rgb(205, 239, 68);
 }
 </style>

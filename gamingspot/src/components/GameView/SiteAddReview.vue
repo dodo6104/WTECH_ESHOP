@@ -1,10 +1,10 @@
 <template>
 <div class="AddRevieSection">
-    <textarea class="AddReview" maxlength="300"></textarea>
+    <textarea class="AddReview" maxlength="500" v-model="text"></textarea>
         <div class="CounterAndButtonSection">
-        <div>0/300</div>
+        <div>{{ charCount }}/500</div>
         <div class="AddReviewInStars">
-            <AddReviewStars />
+            <AddReviewStars :fontsize = "'214px'"/>
             <button class="AddRevieButton">Add Review</button>
         </div>
     </div>
@@ -16,10 +16,21 @@
 import AddReviewStars from '../../components/GameView/SiteAddReviewStars.vue';
 
 export default {
-name: 'SiteGamePicture',
-components: {
-    AddReviewStars,
-},
+    data() {
+        return {
+        text: '',
+        };
+    },
+    name: 'SiteGamePicture',
+    components: {
+        AddReviewStars,
+    },
+    computed: {
+        charCount() {
+            console.log(this.text.length)
+            return this.text.length;
+        }
+    }
 }
 </script>
 
@@ -36,16 +47,22 @@ components: {
 
 .AddReviewInStars {
     display: flex;
-    align-content: center;
+    padding-right: 20px;
 }
 
 .AddRevieButton {
     border-radius: 20px;
-    width: 100px;
-    height: 30px;
-    align-self: flex-end;
-    background-color: black;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
     color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.AddRevieButton:hover {
+    background-color: rgb(0, 0, 0, 0.8);;
 }
 
 textarea.AddReview {

@@ -30,7 +30,7 @@
                 <Review class="ReviewComp"/>
                 <Review class="ReviewComp"/>
                 <div class="Numberring">
-                    <button><b><u>1</u></b></button> <button>2</button> <button>3</button> <button>4</button> <button>5</button>
+                    <button><b><u>1</u></b></button><button>2</button><button>3</button><button>4</button> <button>5</button>
                 </div>
             </div>
         </section>

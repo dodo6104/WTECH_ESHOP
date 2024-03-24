@@ -12,12 +12,12 @@ export default {
     return {
       foregroundWidth: '0%',
       finalWidth: '0%',
-      isMouseOver: false, // Nový stavový indikátor pre sledovanie, či je kurzor nad divom
+      isMouseOver: false, 
     };
   },
   methods: {
     printMousePosition(event) {
-      if (this.isMouseOver) { // Aplikuj logiku len ak je kurzor nad divom
+      if (this.isMouseOver) {
         const { left, width } = this.$refs.trackingArea.getBoundingClientRect();
         const cursorPosition = event.clientX - left;
         const cursorPercentage = (cursorPosition / width) * 100;
