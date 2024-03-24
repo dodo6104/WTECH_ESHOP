@@ -1,7 +1,9 @@
 <template>
-  <div class="login-wrapper">
+
+  <div class="content-wrapper-row">
     <LoginPanel></LoginPanel>
   </div>
+
 </template>
 
 <script>
@@ -18,14 +20,5 @@ export default{
 </script>
 
 
-<style>
-.login-wrapper {
-  display: flex;
-  justify-content: center;  
-  align-items: center;
-  width: 100%;
 
-}
-
-
-</style>
+<style src="../../styles/sections/SiteContentWrapper.css"></style>;

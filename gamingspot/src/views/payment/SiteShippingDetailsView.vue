@@ -1,85 +1,78 @@
 <template>
-    <div>
 
-        <div class="main-section">
+    <div class="content-wrapper-left">
 
+        <section class="content-wrapper-col">
+            <UnderlinedHeader text="Shipping Details"></UnderlinedHeader>
 
-            <section class="content-section">
-                <UnderlinedHeader text="Shipping Details"></UnderlinedHeader>
+            <div class="shipping-details">
+                <div class="detail-row">
+                    <select class="select-widget">
+                        <option>Type of Shipping</option>
+                        <option value="option-1">Local Post Service</option>
+                        <option value="option-2">GLS Delivery Service</option>
+                        <option value="option-3">DHL Express</option>
+                    </select>
 
-                <div class="shipping-details">
-                    <div class="detail-row">
-                        <select class="select-widget">
-                            <option>Type of Shipping</option>
-                            <option value="option-1">Local Post Service</option>
-                            <option value="option-2">GLS Delivery Service</option>
-                            <option value="option-3">DHL Express</option>
-                        </select>
-
-                        <select class="select-widget" @change="fetchCities">
-                            <option disabled selected value="">Country</option>
-                            <option value="AT">Austria</option>
-                            <option value="AU">Australia</option>
-                            <option value="BE">Belgium</option>
-                            <option value="CA">Canada</option>
-                            <option value="CN">China</option>
-                            <option value="CZ">Czech Rebulic</option>
-                            <option value="DK">Denmark</option>
-                            <option value="FI">Finland</option>
-                            <option value="FR">France</option>
-                            <option value="DE">Germany</option>
-                            <option value="IN">India</option>
-                            <option value="IT">Italy</option>
-                            <option value="JP">Japan</option>
-                            <option value="KR">South Korea</option>
-                            <option value="MX">Mexico</option>
-                            <option value="NL">Netherlands</option>
-                            <option value="NZ">New Zealand</option>
-                            <option value="NO">Norway</option>
-                            <option value="PT">Portugal</option>
-                            <option value="RU">Russia</option>
-                            <option value="SA">Saudi Arabia</option>
-                            <option value="ZA">South Africa</option>
-                            <option value="SK">Slovakia</option>
-                            <option value="ES">Spain</option>
-                            <option value="SE">Sweden</option>
-                            <option value="CH">Switzerland</option>
-                            <option value="TR">Turkey</option>
-                            <option value="GB">United Kingdom</option>
-                            <option value="US">United States</option>
-                        </select>
-                    </div>
-
-                    <div class="detail-row">
-                        <input class="select-widget" placeholder="Post Code">
-                        <select class="select-widget">
-                            <option disabled selected value="">City</option>
-                            <!-- Cities will be populated dynamically -->
-                        </select>
-                    </div>
-
-                    <div class="detail-row">
-                        <input class="select-widget" placeholder="Address">
-                        <input class="select-widget" type="number" placeholder="Phone">
-                    </div>
-
-                    
+                    <select class="select-widget" @change="fetchCities">
+                        <option disabled selected value="">Country</option>
+                        <option value="AT">Austria</option>
+                        <option value="AU">Australia</option>
+                        <option value="BE">Belgium</option>
+                        <option value="CA">Canada</option>
+                        <option value="CN">China</option>
+                        <option value="CZ">Czech Rebulic</option>
+                        <option value="DK">Denmark</option>
+                        <option value="FI">Finland</option>
+                        <option value="FR">France</option>
+                        <option value="DE">Germany</option>
+                        <option value="IN">India</option>
+                        <option value="IT">Italy</option>
+                        <option value="JP">Japan</option>
+                        <option value="KR">South Korea</option>
+                        <option value="MX">Mexico</option>
+                        <option value="NL">Netherlands</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="NO">Norway</option>
+                        <option value="PT">Portugal</option>
+                        <option value="RU">Russia</option>
+                        <option value="SA">Saudi Arabia</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="SK">Slovakia</option>
+                        <option value="ES">Spain</option>
+                        <option value="SE">Sweden</option>
+                        <option value="CH">Switzerland</option>
+                        <option value="TR">Turkey</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="US">United States</option>
+                    </select>
                 </div>
 
-                <div class="control-panel">
-                    <button class="submit-button" :onClick="handleGoBackClick">Back</button>
-                    <button class="submit-button"  :onClick="toNextSection">Continue</button>
+                <div class="detail-row">
+                    <input class="select-widget" placeholder="Post Code">
+                    <select class="select-widget">
+                        <option disabled selected value="">City</option>
+                    </select>
                 </div>
-            </section>
 
+                <div class="detail-row">
+                    <input class="select-widget" placeholder="Address">
+                    <input class="select-widget" type="number" placeholder="Phone">
+                </div>
             </div>
+
+            <div class="control-panel">
+                <button class="submit-button" :onClick="handleGoBackClick">Back</button>
+                <button class="submit-button"  :onClick="toNextSection">Continue</button>
+            </div>
+        </section>
     </div>
+  
 </template>
 
 <script>
 import router from '@/router';
 import UnderlinedHeader from '../../components/general/SiteUnderlinedHeader.vue';
-// import CustomButton from '../../components/buttons/SiteSaveButton.vue';
 import axios from 'axios';
 
 export default {
@@ -93,7 +86,6 @@ export default {
     },
     components: {
         UnderlinedHeader
-        // CustomButton
     },
     methods: {
         handleGoBackClick() {
@@ -108,7 +100,7 @@ export default {
                 const response = await axios.get(`http://api.geonames.org/searchJSON?country=${countryCode}&featureClass=P&maxRows=${this.max_city_count}&username=johndym`);
                 const cities = response.data.geonames.map(city => city.name);
                 const cityOptions = document.querySelector('.city-options');
-                cityOptions.innerHTML = ''; // Clear existing options
+                cityOptions.innerHTML = '';
                 cities.forEach(city => {
                     const option = document.createElement('option');
                     option.value = city;
@@ -121,17 +113,17 @@ export default {
         }
     }
 }
+
 </script>
 
 <style src="../../styles/sections/main_section.css"></style>;
-<style src="../../styles/sections/content_section.css"></style>;
+<style src="../../styles/sections/SiteContentWrapper.css"></style>;
 <style src="../../styles/sections/SiteLowerControlPanel.css"></style>
 
 <style src="../../styles/buttons/SiteSubmitButton.css"></style>;
 <style src="../../styles/inputs/SiteSelectWidget.css"></style>;
 
 <style scoped>
-
 
 .shipping-details{
     max-width: 700px;
@@ -142,13 +134,9 @@ export default {
     align-items: center;
 }
 
-
-
-
 .submit-button{
     min-width: 200px;
 }
-
 
 .detail-row {
     display: flex;
@@ -168,7 +156,7 @@ export default {
 /* Responsive adjustments */
 @media only screen and (max-width: 700px) {
     .detail-row {
-        flex-direction: column; /* Change to column layout on smaller screens */
+        flex-direction: column;
         width: 60%;
     }
 

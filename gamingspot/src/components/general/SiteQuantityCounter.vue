@@ -30,30 +30,31 @@
     },
     data() {
       return {
-        modifiedValue: this.value // Create a copy of the prop and use it for modification
+        modifiedValue: this.value // Creates a copy of the prop and use it for modification
       };
     },
     methods: {
       increment() {
         
         if(this.modifiedValue < this.max_value){
-            this.modifiedValue += 1; // Modify the copied value
+            this.modifiedValue += 1;
             this.$emit('increment-event')
         }
       },
       decrement() {
 
         if(this.modifiedValue > this.min_value){
-            this.modifiedValue -= 1; // Modify the copied value
+            this.modifiedValue -= 1;
             this.$emit('decrement-event')
         }
-
       }
     }
   };
   </script>
   
-  <style>
+
+
+<style>
   .main-frame {
     background-color: rgb(159, 160, 160);
     display: flex;
@@ -63,17 +64,21 @@
     gap: 6px;
     padding-left: 4px;
   }
+
   .modifiers {
     display: flex;
     flex-direction: column;
   }
+
   .count {
     font-size: 20px;
   }
+
   .incrementor,
   .decrementor {
     width: 20px;
     height: auto;
     cursor: pointer;
   }
-  </style>
+  
+</style>

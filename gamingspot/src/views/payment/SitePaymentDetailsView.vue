@@ -1,9 +1,7 @@
-
-
 <template>
 
-<div class="main-section">
-    <section class="content-section">
+<div class="content-wrapper-left">
+    <section class="content-wrapper-col">
         <UnderlinedHeader text="Payment Details"></UnderlinedHeader>
 
         <section class="payment-details">
@@ -42,7 +40,6 @@
                     <Label class="continue-shopping-label" @click="$router.push('/')">Continue Shopping?</Label>
                     <CustomButton class="pay-button" text="Pay"></CustomButton>
                 </div>
-
             </div>
 
         </section>
@@ -52,9 +49,7 @@
 
         </div>
 
-    </section>
-
-    
+    </section>    
 </div>
 
 </template>
@@ -93,7 +88,7 @@ export default {
 </script>
 
 <style src="../../styles/sections/main_section.css"></style>;
-<style src="../../styles/sections/content_section.css"></style>;
+<style src="../../styles/sections/SiteContentWrapper.css"></style>;
 <style src="../../styles/sections/SiteLowerControlPanel.css"></style>
 
 <style src="../../styles/buttons/SiteSubmitButton.css"></style>;
@@ -112,12 +107,10 @@ export default {
 }
 
 .payment-details{
-    /* background-image: linear-gradient(to top, #13ffe0, #139624); */
     display: flex;
     flex-direction: column;
     justify-content: left;
     width: 97%;
-
     gap: 15px;
 
 }
@@ -128,25 +121,18 @@ export default {
     width: 100%
 }
 
-.view-section{
-    margin: 5px;    
-}
 
 .payment-info-wrapper{
-    /* background-color: green; */
     display: flex;
     flex-direction: row;
     align-items: bottom;
     min-width: none;
     width: 100%;
-    
 }
 
 
 
 .payment-info, .payment-info-disabled {
-    /* background-color: red; */
-    
     width: 50%;
     border: 1px solid;
 }
@@ -164,15 +150,10 @@ export default {
 }
 
 .pay-button-wrapper{
-    /* background-color: blue; */
     display: flex;
     flex-direction: column;
-
-    
     justify-content: flex-end;
     align-items: center;
-
-
     width: 50%;
     padding-bottom: 20px;
 }
@@ -196,11 +177,11 @@ export default {
 
 @media only screen and (max-width: 1200px){
     .payment-details{
-        
         width: 60%;
         justify-content: center;
         align-items: center
     }
+
     .payment-options{
 
         min-width: 600px;
@@ -208,9 +189,8 @@ export default {
         gap: 0px;
         justify-content: left;
     }
-    .payment-info-wrapper{
 
-        /* width: 140px; */
+    .payment-info-wrapper{
         min-width: 500px;
         width: 100%;
         justify-content: center;
@@ -219,7 +199,6 @@ export default {
     }
     .payment-info{
         width: 100%;
-        /* min-width: 550px; */
     }
 
     .control-panel{
@@ -245,7 +224,10 @@ export default {
     }
 
     .payment-info, .payment-info-disabled{
-        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
 
@@ -259,7 +241,6 @@ export default {
     .pay-button{
         width: 80%;
     }
-
 }
 
 

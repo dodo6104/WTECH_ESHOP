@@ -1,24 +1,18 @@
-
-
-
-
 <template>
     <div class="wrapper">
         <input type="text" class="nickname_entry" :placeholder="placeholder">
     </div>
 </template>
 
-<script>    
+<script>
 
     export default{
         name: "NicknameEntry",
-        
         props: {
             placeholder: {
                 type: String
             }
         },
-
         data() {
             return {
                 isNicknameValid: false

@@ -1,8 +1,8 @@
 <template>
-    <div class="main-section">
+    <div class="content-wrapper-left">
         <!-- Ensure that toHorizontal is passed as a number, not a string -->
         <AccountMenu @selected-button="handle_selected" :account_id="account_id" :selectedIndex="selected_button"/>
-        <section class="content-section">
+        <section class="content-wrapper-col">
             <UnderlinedHeader text="Personal Data"></UnderlinedHeader>
             <PersonalData />
         </section>
@@ -31,25 +31,16 @@ export default {
         AccountMenu,
         PersonalData,
         UnderlinedHeader
-    },
-    methods: {
-        handle_selected() {
-            // Your method implementation
-        }
-    },
-    mounted() {
-  
-    // document.documentElement.style.setProperty('--max-width', '200px'); // Change '500px' to any value you want
-  }
+    }
 }
 </script>
 
 <style src="../../styles/sections/main_section.css"></style>
-<style src="../../styles/sections/content_section.css"></style>
+<style src="../../styles/sections/SiteContentWrapper.css"></style>
 
 <style>
 @media only screen and (max-width: 800px){
-    .main-section{
+    .content-wrapper-left{
         justify-content: center;
         align-items: left;
         flex-direction: column;

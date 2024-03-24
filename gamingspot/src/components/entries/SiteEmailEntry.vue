@@ -5,6 +5,8 @@
 
 </template>
 
+
+
 <script>
 export default {
     data() {
@@ -23,28 +25,31 @@ export default {
 }
 </script>
 
+
+
 <style scoped>
 
-.email-wrapper{
-    width: 100%;
-    display: flex;
-}
+    .email-wrapper{
+        width: 100%;
+        display: flex;
+    }
 
-.email-entry {
-    font-size: 17px;
-    width: 100%;
-    height: 35px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+    .email-entry {
+        font-size: 17px;
+        width: 100%;
+        height: 35px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
-.valid-email {
-    outline-color: green;
-}
+    .valid-email {
+        outline-color: green;
+    }
 
-.invalid-email {
-    outline-color: red;
-}
+    .invalid-email {
+        outline-color: red;
+    }
+    
 </style>

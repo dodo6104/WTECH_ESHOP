@@ -55,7 +55,6 @@ export default {
     display: flex;
 }
 
-
 .password-input, .valid-password, .invalid-password {
     font-size: 17px;
     width: 100%;
@@ -66,7 +65,6 @@ export default {
     border-radius: 5px;
     font-size: 17px;
 }
-
 
 .icon {
     width: 27px;
@@ -84,4 +82,5 @@ export default {
 .invalid-password {
     outline-color: red;
 }
+
 </style>

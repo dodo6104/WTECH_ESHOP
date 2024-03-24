@@ -1,10 +1,10 @@
 <template>
-    <div class="Section">
-      <div class="product-grid">
-        <SiteProduct v-for="product in products" :key="product.id" :product="product"/>
-      </div>
+  <div class="Section">
+    <div class="product-grid">
+      <SiteProduct v-for="product in products" :key="product.id" :product="product"/>
     </div>
-  </template>
+  </div>
+</template>
   
   <script>
   import SiteProduct from './SiteProduct.vue';

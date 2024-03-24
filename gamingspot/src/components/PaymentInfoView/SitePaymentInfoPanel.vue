@@ -43,7 +43,9 @@ export default{
 .view-section {
     display: flex;
     flex-direction: column;
-    padding-right: 10px
+    justify-content: center;
+    align-items: center;
+
 }
 
 .info-row {
@@ -61,18 +63,13 @@ export default{
 
 @media only screen and (max-width: 600px){
 
-
     .info-row{
-        
         width: 100%;
-        /* background-color: green; */
         flex-direction: column;
         margin: 0px;
         padding: 0px;
         align-items: center;
         gap: 0px;
-        /* width: 100%; */
-        /* gap: 15px */
     }
 }
 
