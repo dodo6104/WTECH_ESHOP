@@ -2,7 +2,7 @@
 
     <div class="password-wrapper">
         <img class="icon" src="../../assets/icons/show.png" alt="Show Password" @click="togglePasswordVisibility">
-        <input class="password-input" type="password" :id="inputId" v-model="password" required :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid }">
+        <input  :placeholder="placeholder" :class="{ 'valid-password': isPasswordValid, 'invalid-password': !isPasswordValid}" @input="checkPasswordValidity($event)">
     </div>
 
 </template>
@@ -52,7 +52,7 @@ export default {
 }
 
 
-.password-input {
+.password-input, .valid-password, .invalid-password {
     font-size: 17px;
     width: 100%;
     /* width: calc(100% - 30px); */

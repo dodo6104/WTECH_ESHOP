@@ -57,29 +57,19 @@ export default {
 <style scoped>
 
 .login-panel {
-    /* width: 400px; */
     width: 100%;
     max-width: 400px;
-    /* margin: auto; */
+    margin: 50px auto;
     padding: 10px;
-    /* padding-right: 25px; */
     text-align: center;
-    /* padding-right: 43px; */
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-
-    /* Center the login panel horizontally */
-    /* margin: 0 auto; Add this line */
 }
 
 
 .login-header {
-    margin-bottom: 20px;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
+    margin-bottom: 50px;
 }
 
 /* Styles for the label */
@@ -91,5 +81,10 @@ label {
     color: #333;
 }
 
+
+.submit-button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
 
 </style>

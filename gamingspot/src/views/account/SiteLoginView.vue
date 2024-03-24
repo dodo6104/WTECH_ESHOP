@@ -1,5 +1,5 @@
 <template>
-  <div class="content-section">
+  <div class="login-wrapper">
     <LoginPanel></LoginPanel>
   </div>
 </template>
@@ -19,12 +19,12 @@ export default{
 
 
 <style>
-.content-section {
-  /* background-color: red; */
+.login-wrapper {
   display: flex;
   justify-content: center;  
   align-items: center;
-  /* height: 100vh; Set height to occupy the full viewport height for demonstration */
+  width: 100%;
+
 }
 
 
