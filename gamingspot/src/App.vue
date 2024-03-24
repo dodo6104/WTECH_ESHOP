@@ -30,7 +30,7 @@ export default {
   mounted() {
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
-    document.addEventListener('click', this.handleClickOutside, true); // Pridaný capture mode
+    document.addEventListener('click', this.handleClickOutside, true); 
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.handleResize);
