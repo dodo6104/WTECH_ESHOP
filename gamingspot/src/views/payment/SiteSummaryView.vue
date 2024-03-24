@@ -1,43 +1,34 @@
-
 <template>
 
+<div class="content-wrapper-left">
 
-
-<div class="main-section">
-
-    <section class="content-section">
+    <section class="content-wrapper-col">
         <UnderlinedHeader text="Summary"></UnderlinedHeader>
 
         <div class="summary-panel">
+
             <div class="original-price-div">
                 <label class="price-label" for="price-value">Original Price:</label>
                 <label class="price-value">{{ this.originalPrice }}€</label>
             </div>
 
-
             <div class="saved-amount-div">
 
                 <label class="saved-amount-label">You saved:</label>
                 <label class="saved-amount">-{{ (this.originalPrice - this.discountedPrice).toFixed(2) }}€</label>
-
             </div>
 
             <div class="discounted-price-div">
-
                 <label class="discounted-price-label">Total Price:</label>
                 <label class="discounted-price">{{ this.discountedPrice }}€</label>
             </div>
-
-            
         </div>
 
         <div class="control-panel">
             <Button class="submit-button" type="submit" :onClick="toPrevSection">Back</Button>
             <Button class="submit-button" type="submit" :onClick="toNextSection">Proceed To Payment</Button>
         </div>
-
     </section>
-
 </div>
 
 
@@ -79,7 +70,7 @@ export default {
 </script>
 
 <style src="../../styles/sections/main_section.css"></style>;
-<style src="../../styles/sections/content_section.css"></style>;
+<style src="../../styles/sections/SiteContentWrapper.css"></style>;
 <style src="../../styles/sections/SiteLowerControlPanel.css"></style>
 
 <style src="../../styles/buttons/SiteSubmitButton.css"></style>
@@ -119,7 +110,6 @@ label {
 }
 
 .original-price-div, .saved-amount-div {
-    /* background-color: rgb(60, 243, 9); */
     background-image: linear-gradient(rgb(0, 123, 255), rgb(4, 6, 132));    padding: 10px; /* Add some padding for better spacing */
 }
 
@@ -149,7 +139,6 @@ label {
     font-size: 30px;
 }
 
-
 .saved-amount {
     font-weight: bold;
     color: red;
@@ -158,14 +147,6 @@ label {
 .discounted-price-label{
     font-size: 30px;
 }
-
-/* .control-panel{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 5px;
-    margin: 5px;
-} */
 
 
 @media only screen and (max-width: 650px){

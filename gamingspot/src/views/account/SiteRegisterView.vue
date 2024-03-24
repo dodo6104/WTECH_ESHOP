@@ -1,9 +1,13 @@
 <template>
-  <div class="register-wrapper">
-    <RegisterPanel />
+
+  <div class="content-wrapper-row">
+    <RegisterPanel/>
   </div>
+
 </template>
-  
+
+
+
 <script>
 
 import RegisterPanel from '../../components/RegisterView/RegisterPanel.vue';
@@ -14,14 +18,8 @@ export default {
     RegisterPanel
   }
 }
+
 </script>
     
 
-<style>
-  .register-wrapper{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
+<style src="../../styles/sections/SiteContentWrapper.css"></style>;

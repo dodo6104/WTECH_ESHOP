@@ -1,10 +1,10 @@
 
 
 <template>
-    <div class="main-section">
+    <div class="content-wrapper-left">
         <AccountMenu  @selected-button="handle_selected" :account_id="account_id" :selectedIndex="selected_button"/>
 
-        <section class="content-section">
+        <section class="content-wrapper-col">
             <UnderlinedHeader text="My Orders"></UnderlinedHeader>
             
             <MyOrders />
@@ -48,10 +48,15 @@ export default {
 
 </script>
 
-<style src="../../styles/sections/main_section.css"></style>;
-<style src="../../styles/sections/content_section.css"></style>;
+
+<style src="../../styles/sections/SiteContentWrapper.css"></style>;
 
 <style scoped>
 
+@media only screen and (max-width: 800px) {
+    .content-wrapper-left{
+        flex-direction: column;
+    }
+}
 
 </style>
