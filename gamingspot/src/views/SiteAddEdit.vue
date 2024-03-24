@@ -2,17 +2,17 @@
     <div class="site-add-edit">
       <form>
         <div class="form-group">
-          <label for="productName">Meno produktu:</label>
+          <label for="productName">Product Name:</label>
           <input type="text" id="productName" v-model="product.name">
         </div>
   
         <div class="form-group">
-          <label for="productDescription">Popis produktu:</label>
+          <label for="productDescription">Product Description:</label>
           <textarea id="productDescription" v-model="product.description"></textarea>
         </div>
   
         <div class="form-group">
-          <label for="platform">Platformy:</label>
+          <label for="platform">Platforms:</label>
           <select id="platform" v-model="product.platforms" multiple>
             <option value="web">Steam</option>
             <option value="mobile">Epic Games</option>
