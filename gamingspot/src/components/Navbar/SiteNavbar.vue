@@ -45,14 +45,14 @@ export default {
     platformButtonClicked() {
       const button = this.$el.querySelector('.platformButton');
       const rect = button.getBoundingClientRect();
-      const centerX = (rect.left + rect.width / 2)-50;
+      const centerX = (rect.left + rect.width / 2);
       this.$emit('platform-clicked', centerX);
     },
 
     genresButtonClicked() {
       const button2 = this.$el.querySelector('.genresButton');
       const rect2 = button2.getBoundingClientRect();
-      const centerX2 = (rect2.left + rect2.width / 2)-50;
+      const centerX2 = (rect2.left + rect2.width / 2);
       this.$emit('genres-clicked', centerX2);
     },
 
@@ -69,7 +69,8 @@ export default {
       this.searchDivStyles = {
         border: 'none',
         marginRight: '20px',
-        backgroundColor: 'transparent' 
+        backgroundColor: 'white',
+        borderRadius: '20px'
       };
       this.searchQuery = ''
     },
@@ -127,9 +128,9 @@ export default {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 110px;
   font: 21px 'Roboto', sans-serif;
   background-color: #003366;
+  height: 110px;
 }
 
 button {
@@ -170,6 +171,8 @@ button {
   display: inline-block;
   width: 120px;
   text-align: center;
+  align-content: center;
+  min-height: 110px;
 }
   
 .navbar-search {
@@ -244,6 +247,7 @@ button {
   }
   .navbar-item {
     text-align: right;
+    min-height: 0px;
   }
 }
 
@@ -259,7 +263,7 @@ button {
   margin-right: 0px; 
   text-align: right;
   margin-right: 20px;
-
+  min-height: 0px;
 }
 }
 @media (max-width: 600px) {
@@ -269,6 +273,9 @@ button {
   .navbar-brand .short{
     display: inline;
 }
+  .navbar-item {
+    min-height: 0px;
+  }
 }
 @media (max-width: 400px) {
   .navbar-brand-h1 {

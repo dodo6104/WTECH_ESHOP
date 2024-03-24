@@ -19,9 +19,6 @@ export default {
     onCardClick() {
       this.$router.push({ path: '/gamedetail' });
     },
-    addToCart() {
-      console.log("Add cart")
-    }
   }
 }
 </script>
@@ -58,17 +55,22 @@ export default {
 }
 
 .add-to-cart {
-  background-color: #007bff;
-  color: white;
+  background-color: #a1c900;
+  color: black;
   border: none;
-  padding: 10px 20px;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
   text-transform: uppercase;
   margin-top: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
 
 .add-to-cart:hover {
-  background-color: #0056b3;
+  background-color: rgb(205, 239, 68);
 }
 </style>

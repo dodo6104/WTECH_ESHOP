@@ -1,10 +1,12 @@
 <template>
   <div class="GenresMenu">
     <div class="GenresData">
-      <label v-for="genre in genres" :key="genre">
-        <input type="checkbox" :value="genre" @change="updateSelectedGenres" :checked="selectedGenres.includes(genre)">
+      <label class="GenresButton" v-for="genre in genres" :key="genre"
+            :class="{'genre-selected': selectedGenres.includes(genre), 'genre-not-selected': !selectedGenres.includes(genre)}"
+            @click="toggleGenreSelection(genre)">
         {{ genre }}
       </label>
+
     </div>
     <button type="button" @click="searchGames" class="SearchButtonGenres">Search</button>
   </div>
@@ -20,18 +22,18 @@ data() {
   };
 },
 methods: {
-  updateSelectedGenres(event) {
-    const value = event.target.value;
-    if (event.target.checked) {
-      this.selectedGenres.push(value);
+  toggleGenreSelection(genre) {
+    const index = this.selectedGenres.indexOf(genre);
+    if (index > -1) {
+      this.selectedGenres.splice(index, 1);
     } else {
-      this.selectedGenres = this.selectedGenres.filter(genre => genre !== value);
+      this.selectedGenres.push(genre);
     }
   },
   searchGames() {
     console.log('Selected genres:', this.selectedGenres);
     this.$router.push('/gameview');
-  }
+  },
 }
 }
 </script>
@@ -40,20 +42,18 @@ methods: {
 .GenresMenu {
   position: absolute;
   display: grid;
-  border-radius: 5px;
-  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #003366dc;
   z-index: 5;
 }
 
 .GenresData {
   display: grid;
   grid-template-columns: auto auto auto auto; 
-  background-color: white;
 }
 
 .GenresMenu label {
   font-size: 20px;
-  border: 1px solid black;
   margin: 20px 25px 10px 25px;
   padding: 10px 5px 10px 5px;
 }
@@ -65,6 +65,50 @@ methods: {
   padding: 10px 30px;
   font-size: 24px;
   cursor: pointer; 
-  margin: 0% 35% 4% 35%; 
+  margin: 4% 35% 4% 35%; 
 }
+
+.GenresButton {
+  display: flex;
+  width: 150px;
+  height: 25px;
+  justify-content: center;
+  align-items: center
+}
+
+.genre-selected {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 20px;
+}
+
+.genre-not-selected {
+  background-color: #f4f4f4; 
+  color: black;
+  border-radius: 20px;
+}
+
+@media (max-width: 1091px) {
+  .GenresData {
+    grid-template-columns: auto auto auto; 
+  }
+}
+
+@media (max-width: 782px) {
+  .GenresData {
+    grid-template-columns: auto auto; 
+  }
+}
+
+@media (max-width: 520px) {
+  .GenresData {
+    grid-template-columns: none ; 
+  }
+  
+  .SearchButtonGenres {
+    padding: 10px;
+    margin: 0% 4% 4% 4%; 
+  } 
+}
+
 </style>

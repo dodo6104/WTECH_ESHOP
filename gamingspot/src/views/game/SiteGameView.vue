@@ -18,7 +18,7 @@
 
 <script>
 import SiteProduct from '../../components/HomePageAndGameView/SiteProduct.vue';
-import Section from '../../components/HomePageAndGameView/SiteHomePageSection.vue';
+import Section from '../../components/HomePageAndGameView/SiteGameViewSection.vue';
 
 export default {
   name: 'SiteHome',
@@ -64,18 +64,29 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
+  border: solid black; 
+  padding-bottom: 40px;
+  border-width: 0px 0 1px 0px;
 }
 
 .FilterButton {
-  border: 1px solid black;
   font-size: 15px;
   width: 130px;
   height: 50px;
   margin: 30px 10px 0 10px;
+  background-color: #012950;
+  color: white;
 }
 
 .FilterButton.active {
-  background-color: grey; /* Blue background for the active button */
-  color: white; /* White text color for the active button */
+  background-color: #024f9d;
+  color: white; 
+}
+
+@media (max-width: 620px) {
+  .gameFilters {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 }
 </style>
