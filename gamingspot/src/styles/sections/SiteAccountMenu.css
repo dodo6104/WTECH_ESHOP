@@ -1,0 +1,59 @@
+:root {
+    --max-width: 800px; /* Default value for max-width */
+}
+
+.account-menu {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #003366, #0099ff);
+    min-width: 250px;
+    max-width: var(--max-width); /* Using CSS variable for max-width */
+    height: 100vh;
+    text-align: center;
+    border-right: 1px solid #8d8c8c;
+}
+
+.option-row {
+    width: 100%;
+}
+
+.logout-option {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout-icon {
+    width: 25px;
+    height: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+    .account-menu {
+        flex-direction: row;
+        max-height: 80px;
+    }
+
+    .option-row {
+        min-width: 240px;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .account-menu {
+        min-height: 170px;
+        flex-direction: column;
+        max-height: 80px;
+        align-items: center;
+    }
+
+    .option-row {
+        flex-direction: column;
+        min-width: 240px;
+        width: 40%;
+    }
+
+}

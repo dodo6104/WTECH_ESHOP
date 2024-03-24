@@ -1,26 +1,25 @@
 <template>
-    <div>
-        <h1>{{ title }}</h1>
+
+    <section class="login-panel">
+        <h1 class="login-header">Log in</h1>
         
-        <section id="login_panel">
-            <h1>Log in</h1>
+        <EmailFrame class="email-frame"></EmailFrame>
+        <PasswordFrame :inputId="'password_frame1'"></PasswordFrame>
+        
+        <button class="submit-button" type="submit">Proceed</button>
             
-            <EmailFrame class="email-frame"></EmailFrame>
-            <PasswordFrame :inputId="'password_frame1'"></PasswordFrame>
-            <ProceedButton></ProceedButton>
-                
-            <div>
-                <label @click="$router.push('/register')">Register</label>
-            </div>
-        </section>
-    </div>
+        <div>
+            <label @click="$router.push('/register')">Register</label>
+        </div>
+    </section>
+
 </template>
   
 <script>
 
 import EmailFrame from '../entries/SiteEmailEntry.vue'
 import PasswordFrame from '../entries/SitePasswordEntry.vue'
-import ProceedButton from '../buttons/ProceedButton.vue';
+
 
 export default {
 
@@ -34,8 +33,7 @@ export default {
     },
     components: {
         EmailFrame,
-        PasswordFrame,
-        ProceedButton
+        PasswordFrame
     },
 
     methods: {
@@ -53,23 +51,31 @@ export default {
     }
 };
 </script>
-  
+
+<style src="../../styles/buttons/SiteSubmitButton.css"></style>
+
 <style scoped>
-/* Styles for the login panel */
-#login_panel {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
+
+.login-panel {
+    /* width: 400px; */
+    width: 100%;
+    max-width: 400px;
+    /* margin: auto; */
+    padding: 10px;
+    /* padding-right: 25px; */
     text-align: center;
-    padding-top: 10px;
-    border: 1px solid #ccc; /* Default border color */
+    /* padding-right: 43px; */
+    border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+
+    /* Center the login panel horizontally */
+    /* margin: 0 auto; Add this line */
 }
 
-/* Styles for the "Log in" header */
-#login_panel h1 {
-    margin-bottom: 50px; /* Add margin at the bottom of the "Log in" header */
+
+.login-header {
+    margin-bottom: 20px;
 }
 
 button[type="submit"]:hover {

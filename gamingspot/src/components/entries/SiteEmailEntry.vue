@@ -1,9 +1,8 @@
 <template>
-    <section>
-        <div>
-            <input type="email" id="email_frame" placeholder="Email" :class="{ 'valid-email': isEmailValid, 'invalid-email': !isEmailValid }" v-model="email" @input="checkEmailValidity($event)">
-        </div>
-    </section>
+    <div class="email-wrapper">
+        <input type="email" class="email-entry" placeholder="Email" :class="{ 'valid-email': isEmailValid, 'invalid-email': !isEmailValid }" v-model="email" @input="checkEmailValidity($event)">
+    </div>
+
 </template>
 
 <script>
@@ -25,9 +24,15 @@ export default {
 </script>
 
 <style scoped>
-#email_frame {
+
+.email-wrapper{
+    width: 100%;
+    display: flex;
+}
+
+.email-entry {
     font-size: 17px;
-    width: 92%;
+    width: 100%;
     height: 35px;
     padding: 10px;
     margin-bottom: 10px;

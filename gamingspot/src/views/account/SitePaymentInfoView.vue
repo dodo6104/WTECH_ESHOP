@@ -1,45 +1,39 @@
 <template>
-    
-
-    <section class="main-section">
+    <div class="main-section">
         <AccountMenu @selected-button="handle_selected" :account_id="account_id" :selectedIndex="selected_button"/>
-        
-        
         
         <section class="content-section">
             <UnderlinedHeader class="header" text="Payment Info"></UnderlinedHeader>    
             
             
-            <section class="payment-info">
+            <div class="payment-info">
                 
-                <div class="row">
+                <div class="info-row">
                     <NicknameEntry placeholder="Credit Card Number"/>
                     <NicknameEntry placeholder="Cardholder Name"/>
                 </div>
 
-                <div class="row">
+                <div class="info-row">
                     <NicknameEntry placeholder="Expiration Date"/>
                     <NicknameEntry placeholder="CVV/CVC"/>
                 </div>
 
-                <div class="row">
+                <div class="info-row">
                     <NicknameEntry placeholder="Billing Address"/>
                     <NicknameEntry placeholder="Shipping Address"/>
                 </div>
 
-                <div class="row">
-                    <SaveButton class="save-button" text="Save"/>
+                <div class="info-row">
+                    <Button class="submit-button">Save</Button>
                 </div>
-            </section>
+            </div>
         </section>
-
-    </section>
+    </div>
 </template>
 
 <script>
 
 import NicknameEntry from '../../components/entries/SiteNicknameEntry.vue';
-import SaveButton from '../../components/buttons/SiteSaveButton.vue';
 import AccountMenu from '../../components/account/SiteAccountMenu.vue'
 import UnderlinedHeader from '../../components/general/SiteUnderlinedHeader.vue';
 
@@ -47,7 +41,6 @@ export default {
     name: "PaymentInfo",
     components: {
         NicknameEntry,
-        SaveButton,
         AccountMenu,
         UnderlinedHeader
     },
@@ -65,13 +58,18 @@ export default {
 }
 </script>
 
+<!-- Custom Styles -->
+
+
 <style src="../../styles/sections/main_section.css"></style>;
 <style src="../../styles/sections/content_section.css"></style>;
+
+<style src="../../styles/buttons/SiteSubmitButton.css"></style>
 
 
 <style scoped>
 
-.row {
+.info-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -96,7 +94,17 @@ export default {
     }
 }
 
-
+@media only screen and (max-width: 600px) {
+    .info-row{
+        width: 100%;
+        /* background-color: green; */
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
+        gap: 0px;
+    }
+}
 
 
 </style>

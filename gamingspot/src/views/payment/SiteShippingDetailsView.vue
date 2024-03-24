@@ -1,12 +1,12 @@
 <template>
     <div>
-        
+
         <div class="main-section">
-            
+
 
             <section class="content-section">
                 <UnderlinedHeader text="Shipping Details"></UnderlinedHeader>
-                
+
                 <div class="shipping-details">
                     <div class="detail-row">
                         <select class="shipping-options">
@@ -47,7 +47,6 @@
                             <option value="TR">Turkey</option>
                             <option value="GB">United Kingdom</option>
                             <option value="US">United States</option>
-                            <!-- Add more countries here -->
                         </select>
                     </div>
 
@@ -64,19 +63,21 @@
                         <input class="phone-input" type="number" placeholder="Phone">
                     </div>
 
-                    <div class="control-panel">
-                        <button class="submit-button" :onClick="handleGoBackClick">Back</button>
-                        <button class="submit-button"  :onClick="toNextSection">Continue</button>
-                    </div>
+                    
+                </div>
+
+                <div class="control-panel">
+                    <button class="submit-button" :onClick="handleGoBackClick">Back</button>
+                    <button class="submit-button"  :onClick="toNextSection">Continue</button>
                 </div>
             </section>
-            
+
             </div>
     </div>
 </template>
 
 <script>
-import router from '@/router'; 
+import router from '@/router';
 import UnderlinedHeader from '../../components/general/SiteUnderlinedHeader.vue';
 // import CustomButton from '../../components/buttons/SiteSaveButton.vue';
 import axios from 'axios';
@@ -124,6 +125,7 @@ export default {
 
 <style src="../../styles/sections/main_section.css"></style>;
 <style src="../../styles/sections/content_section.css"></style>;
+<style src="../../styles/sections/SiteLowerControlPanel.css"></style>
 
 <style src="../../styles/buttons/SiteSubmitButton.css"></style>;
 
@@ -131,8 +133,9 @@ export default {
 
 
 .shipping-details{
+    /* background-color: green; */
     max-width: 700px;
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,15 +143,10 @@ export default {
 }
 
 
-.control-panel {
-    width: 100%;
-    padding: 5px;
-    gap: 5px;   
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+.submit-button{
+    min-width: 200px;
 }
 
 
@@ -156,7 +154,7 @@ export default {
     display: flex;
     flex-direction: row;
     padding: 10px;
-    width: 90%;
+    width: 100%;
     gap: 15px;
 }
 
@@ -172,7 +170,7 @@ export default {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%; /* Set width to 100% */
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 /* Option elements */
@@ -196,20 +194,16 @@ export default {
 
 
 /* Responsive adjustments */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .detail-row {
         flex-direction: column; /* Change to column layout on smaller screens */
+        width: 60%;
+    }
+
+    .shipping-details{
+        width: 90%;
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .shipping-options,
-    .country-options,
-    .post-code-input,
-    .city-options,
-    .address-input,
-    .phone-input {
-        width: 100%; /* Set width to 100% on smaller screens */
-    }
-}
+
 </style>

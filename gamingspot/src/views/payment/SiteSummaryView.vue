@@ -28,10 +28,12 @@
                 <label class="discounted-price">{{ this.discountedPrice }}€</label>
             </div>
 
-            <div class="control-panel">
-                <Button class="submit-button" type="submit" :onClick="toPrevSection">Back</Button>
-                <Button class="submit-button" type="submit" :onClick="toNextSection">Proceed To Payment</Button>
-            </div>
+            
+        </div>
+
+        <div class="control-panel">
+            <Button class="submit-button" type="submit" :onClick="toPrevSection">Back</Button>
+            <Button class="submit-button" type="submit" :onClick="toNextSection">Proceed To Payment</Button>
         </div>
 
     </section>
@@ -78,7 +80,10 @@ export default {
 
 <style src="../../styles/sections/main_section.css"></style>;
 <style src="../../styles/sections/content_section.css"></style>;
+<style src="../../styles/sections/SiteLowerControlPanel.css"></style>
+
 <style src="../../styles/buttons/SiteSubmitButton.css"></style>
+
 
 <style scoped>
 
@@ -154,13 +159,13 @@ label {
     font-size: 30px;
 }
 
-.control-panel{
+/* .control-panel{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 5px;
     margin: 5px;
-}
+} */
 
 
 @media only screen and (max-width: 650px){
