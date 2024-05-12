@@ -5,8 +5,7 @@
         <div class="content-wrapper-col">
           <UnderlinedHeader text="Cart List"></UnderlinedHeader>
             
-          <!-- This dynamically loads the items from cartItems and assigns unique keys to them, which are provided when remove-event is
-              caught so that the item which emitted the event can be identified and removed. -->
+
           <div class="cart-list">
 
             <div class="no-items-section" v-if="cartItems.length === 0">
@@ -66,7 +65,6 @@
       };
     },
     created() {
-      // Calculate the initial totalPrice by summing all prices in cartItems
       this.totalPrice = this.cartItems.reduce((accumulator, currentItem) => accumulator + currentItem.price, 0);
     },
     methods: {

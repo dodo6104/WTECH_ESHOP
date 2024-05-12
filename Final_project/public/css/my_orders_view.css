@@ -1,0 +1,86 @@
+.game-frame {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px;
+    align-items: center;
+    text-align: center;
+    max-width: 200px;
+    
+}
+
+.order-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+.pics{
+    display: inline-block;
+    position: relative;
+}
+
+.game-image {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+
+.game-details{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(176, 174, 174);
+    padding: 10px 0px;
+    gap: 5px;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+
+.game-price, .game-name{
+    
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.game-name-label{
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+.game-name{
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
+}
+
+
+
+
+
+.info-icon{
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;  
+}
+
+
+
+.game-button:hover button {
+    background-color: #0056b3;
+}
+
+.game-button:active button {
+    background-color: #0056b3;
+    transform: translateY(1px);
+}
+
+.control-panel{
+    padding: 0px 10px;
+}

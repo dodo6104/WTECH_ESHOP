@@ -1,0 +1,58 @@
+
+.input-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    gap: 10px;
+}
+
+
+.input-panel-header {
+    margin-bottom: 50px;
+}
+
+.input-panel-entry-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.control-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles for the label */
+.to-prev-section-label {
+    font-family: 'Arial';
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #333;
+}
+
+
+.submit-button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.input-entry, .password-entry {
+    width: 100%;
+    padding: 15px 5px;
+    box-sizing: border-box;
+    
+}

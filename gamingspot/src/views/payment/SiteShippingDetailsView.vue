@@ -153,7 +153,6 @@ export default {
     max-width: 400px;
 }
 
-/* Responsive adjustments */
 @media only screen and (max-width: 700px) {
     .detail-row {
         flex-direction: column;

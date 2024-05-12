@@ -120,7 +120,7 @@ export default {
   }
 }
 
-@media (max-width: 782px) {
+@media (max-width: 1052px) {
   .AllSections {
     grid-template-columns: auto auto; 
   }

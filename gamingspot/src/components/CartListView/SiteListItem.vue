@@ -47,10 +47,7 @@ export default {
             type: Number,
             required: true
         },
-        // form: {
-        //     type: String,
-        //     required: true
-        // }
+    
     },
     components: {
         QuantityCounter

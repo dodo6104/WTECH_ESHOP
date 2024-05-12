@@ -1,0 +1,89 @@
+:root {
+    --max-width: 800px; /* Default value for max-width */
+}
+
+.account-panel-view{
+    display: flex;
+    flex-direction: row;
+}
+
+.account-section-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.account-menu {
+    padding-top: 18px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #003366, #0099ff);
+    width: 100%;
+    min-width: 200px;
+    max-width: 250px;
+    /* max-width: var(--max-width); */
+    height: 100vh;
+    text-align: center;
+    border-right: 1px solid #8d8c8c;
+} 
+
+.option-row {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logout-option {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout-icon {
+    width: 25px;
+    height: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+    .account-panel-view{
+        flex-direction: column;
+    }
+
+    .account-section-wrapper{
+        flex-direction: column;
+    }
+
+    .account-menu {
+
+        flex-direction: row;
+        max-height: 80px;
+        background-color: green;
+        width: 100%;
+        max-width: none;
+        
+    }
+
+    .option-row {
+        min-width: 220px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .account-menu {
+        min-height: 170px;
+        flex-direction: column;
+        max-height: 190px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .option-row {
+        flex-direction: column;
+        min-width: 240px;
+        width: 40%;
+    }
+}

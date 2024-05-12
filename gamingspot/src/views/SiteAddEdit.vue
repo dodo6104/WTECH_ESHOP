@@ -84,7 +84,6 @@
   </script>
   
   <style>
-  /* Štýly zostávajú rovnaké ako v predošlom príklade */
   .site-add-edit .form-group {
     margin-bottom: 1rem;
   }

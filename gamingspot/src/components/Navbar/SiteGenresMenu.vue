@@ -94,7 +94,7 @@ methods: {
   }
 }
 
-@media (max-width: 782px) {
+@media (max-width: 1052px) {
   .GenresData {
     grid-template-columns: auto auto; 
   }

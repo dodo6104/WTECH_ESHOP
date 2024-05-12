@@ -1,0 +1,28 @@
+.payment-method {
+    margin-top: 30px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle; /* Align elements vertically */
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid #8d8c8c;
+    border-bottom: 1px solid #8d8c8c;
+}
+
+.payment-method img {
+    width: 48px;
+    height: 48px;
+    margin-right: 5px;
+    vertical-align: middle; /* Align elements vertically */
+}
+
+.payment-method label {
+    margin-right: 35px;
+    vertical-align: middle; /* Align elements vertically */
+}
+
+#authors_copyright{
+    text-align: center;
+}

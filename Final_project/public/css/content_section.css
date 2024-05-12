@@ -1,0 +1,16 @@
+.content-container{
+    width: 100%;
+}
+
+.content-section-header{
+    font-size: 27px;
+    margin: 0px 0px;
+    margin-left: 5px;
+    margin-top: 8px;
+}
+
+.content-section-header-line{
+    border: 1px solid;
+    margin-bottom: 30px;
+    margin-left: 5px;
+}

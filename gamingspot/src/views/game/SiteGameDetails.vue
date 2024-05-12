@@ -155,7 +155,7 @@ components: {
         width: 100%;
         display: flex;
         justify-content: center;
-        align-items: center; /* Zarovná deti (obsah) na stred vertikálne */
+        align-items: center; 
 
     }
     .StarRatingMax {

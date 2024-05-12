@@ -17,7 +17,6 @@ export default {
     },
     methods: {
         checkEmailValidity(event) {
-            // Regular expression to check email format
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             this.isEmailValid = emailRegex.test(event.target.value);
         }

@@ -29,11 +29,7 @@
 
 
 <style scoped>
-/* #payment_methods {
-    text-align: center;
-    /* margin-top: 35px; */
-    /* padding: 15px;
-} */
+
 
 .payment-method {
     margin-top: 30px;
