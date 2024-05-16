@@ -13,13 +13,13 @@
             @foreach ($latestGames as $game)
             <div class="card" onclick="redirectToGame('{{ $game->id }}')">
                 <div class="image-placeholder">
-                    <img src="{{ asset('images/games/' . $game->name . '/1.jpeg') }}" alt="Game image" width="250" height="250">
+                    <img src="{{ asset('images/games/' . $game->name . '/1.webp') }}" alt="Game image" width="250" height="250">
                     @if ($game->discount > 0)
                         <div class="discount-tag">-{{ $game->discount }}%</div>
                     @endif
                 </div>
                 <div class="game-info">
-                    <h2 class="game-name">{{ $game->name }}</h2>
+                    <h2 class="game-name">{{ Str::limit($game->name, 15) }}</h2>
                     <p class="platform">{{ $game->platform }}</p>
                     @if ($game->discount > 0)
                         <p class="price"> <s><span class="original-price">{{ $game->price }} €</s></span> <br> <span class="discounted-price">{{ number_format($game->price * (1 - $game->discount / 100), 2) }} €</span></p>
@@ -39,13 +39,13 @@
             @foreach ($bestSellingGames as $game)
             <div class="card" onclick="redirectToGame('{{ $game->id }}')">
                 <div class="image-placeholder">
-                    <img src="{{ asset('images/games/' . $game->name . '/1.jpeg') }}" alt="Game image" width="250" height="250">
+                    <img src="{{ asset('images/games/' . $game->name . '/1.webp') }}" alt="Game image" width="250" height="250">
                     @if ($game->discount > 0)
                         <div class="discount-tag">-{{ $game->discount }}%</div>
                     @endif
                 </div>
                 <div class="game-info">
-                    <h2 class="game-name">{{ $game->name }}</h2>
+                    <h2 class="game-name">{{ Str::limit($game->name, 15) }}</h2>
                     <p class="platform">{{ $game->platform }}</p>
                     @if ($game->discount > 0)
                         <p class="price"> <s><span class="original-price">{{ $game->price }} €</s></span> <br> <span class="discounted-price">{{ number_format($game->price * (1 - $game->discount / 100), 2) }} €</span></p>
@@ -65,13 +65,13 @@
             @foreach ($megaDiscountGames as $game)
             <div class="card"  onclick="redirectToGame('{{ $game->id }}')">
                 <div class="image-placeholder">
-                    <img src="{{ asset('images/games/' . $game->name . '/1.jpeg') }}" alt="Game image" width="250" height="250">
+                    <img src="{{ asset('images/games/' . $game->name . '/1.webp') }}" alt="Game image" width="250" height="250">
                     @if ($game->discount > 0)
                         <div class="discount-tag">-{{ $game->discount }}%</div>
                     @endif
                 </div>
                 <div class="game-info">
-                    <h2 class="game-name">{{ $game->name }}</h2>
+                    <h2 class="game-name">{{ Str::limit($game->name, 15) }}</h2>
                     <p class="platform">{{ $game->platform }}</p>
                     @if ($game->discount > 0)
                         <p class="price"> <s><span class="original-price">{{ $game->price }} €</s></span> <br> <span class="discounted-price">{{ number_format($game->price * (1 - $game->discount / 100), 2) }} €</span></p>
@@ -173,6 +173,10 @@ border: 1px solid #ccc;
   margin: 10px 0;
 }
 
+.price {
+    height: 30px;
+}
+
 .platform, .price {
   color: #555;
   margin: 5px 0;
@@ -192,6 +196,7 @@ border: 1px solid #ccc;
   height: 50px;
   border-radius: 20px;
   font-size: 23px;
+  
 }
 
 .add-to-cart:hover {

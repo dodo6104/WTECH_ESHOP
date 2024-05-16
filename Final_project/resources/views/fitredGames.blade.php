@@ -26,7 +26,7 @@
             @foreach ($games as $game)
             <div class="card" onclick="redirectToGame('{{ $game->id }}')">
                 <div class="image-placeholder">
-                    <img src="{{ asset('images/games/' . $game->name . '/1.jpeg') }}" alt="Description of Image" width="250" height="250">
+                    <img src="{{ asset('images/games/' . $game->name . '/1.webp') }}" alt="Description of Image" width="250" height="250">
                             @if ($game->discount > 0)
                         <div class="discount-tag">-{{ $game->discount }}%</div>
                     @endif
@@ -159,7 +159,6 @@ html, body {
   font-size: 35px;
   font-weight: bold;
   align-items: center;
-  border: solid black; 
   padding-left: 20px;
 }
 
@@ -275,6 +274,11 @@ border: 1px solid #ccc;
     justify-content: center;
     margin-top: 20px;
 }
+
+.price {
+    height: 30px;
+}
+
 .page-btn {
     padding: 10px 15px;
     margin: 0 5px;

@@ -56,3 +56,5 @@ Route::post('/cart/shipping-submit', [FirstController::class,'sumbmitShipping'])
 Route::post('/cart/payment', [FirstController::class,'paymentProcess']);
 
 Route::post('/pay', [FirstController::class,'payProcess']);
+
+Route::post("/game/{gameId}/addreview", [FirstController::class,'addReview']);

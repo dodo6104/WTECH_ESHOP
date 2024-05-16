@@ -12,8 +12,10 @@
             
             <div class="GamePicture">
                 <div class="GameImageContainer">
-                    <img src="{{ asset('images/games/' . $game->name . '/1.jpeg') }}" alt="Description of Image">
-                </div>                
+                    <img id="gameImage" src="{{ asset('images/games/' . $game->name . '/1.webp') }}" alt="Description of Image" height="300px">
+                    <button class="image-button prev-button" onclick="prevImage()"><</button>
+                    <button class="image-button next-button" onclick="nextImage()">></button>
+                </div>
             </div>
             
             
@@ -44,7 +46,8 @@
                     <div class="RigthSection">
                         <div class="NameSelectors">Platform</div>
                         <select class="Selector" id="platform">
-                            <option >Steam, Epic Games</option>
+                            <option >Steam</option>
+                            <option >Epic Games</option>
                         </select>
                         <div class="AddButtonContainer" onclick="window.location.href='/cart/add/{{$game->id}}'"><button class="AddToCartButton">Add to Cart</button></div>
                     </div>
@@ -64,18 +67,22 @@
             </div>
         </section>
         <section class="Thirdsection">
-            <div class="AddRevieSection">
-                <textarea class="AddReview" maxlength="500" v-model="text"></textarea>
+            <div class="AddReviewSection">
+                <form action="{{ url('/game/' . $game->id . '/addreview') }}" method="POST">
+                    @csrf
+                    <textarea class="AddReview" name="text" maxlength="500"></textarea>
                     <div class="CounterAndButtonSection">
-                    <div>0/500</div>
-                    <div class="AddReviewInStars">
-                    <div class="star-rating" >
-                        <div class="star-background">★★★★★</div>
-                        <div class="star-foreground">★★★★★</div>
+                        <div class="AddReviewInStars">
+                            <div class="user-star-rating" id="userRating">
+                                <div class="star-background">★★★★★</div>
+                                <div class="star-foreground" id="userStarForeground">★★★★★</div>
+                            </div>
+                            <input type="hidden" name="rating" id="rating" value="0">
+                            <input type="hidden" name="game_id" id="game_id" value="{{ $game->id }}">
+                            <button class="AddRevieButton" type="submit">Add Review</button>
+                        </div>                        
                     </div>
-                    <button class="AddRevieButton">Add Review</button>
-                    </div>
-                </div>
+                </form>
             </div>
             <div class="Reviews">
                 <h2>Reviews</h2> 
@@ -98,6 +105,8 @@
             </div>
         </section>
     </div>
+    @include('footer') 
+
 </body>
 </html>
 
@@ -123,8 +132,29 @@ html, body {
     justify-content: space-between;
 }
 
-.GamePicture{
-    padding-right: 2%;
+.GamePicture {
+    position: relative;
+}
+
+.image-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px
+}
+
+.prev-button {
+    left: 0px;
+}
+
+.next-button {
+    right: 0px;
 }
 
 .StarRatingMin {
@@ -379,6 +409,27 @@ background-color: #f2f2f2;  /* Farba pozadia pre každú položku */
     color: red;
 }
 
+.user-star-rating {
+    position: relative;
+    display: inline-block;
+    font-size: 3.5rem;
+    cursor: pointer;
+}
+
+.user-star-rating .star-background {
+    color: #ddd;
+}
+
+.user-star-rating .star-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: goldenrod;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
 @media (max-width: 975px) {
     .FirstSection, .SecondSection, .Thirdsection {
         margin-top: 20px;
@@ -423,3 +474,65 @@ background-color: #f2f2f2;  /* Farba pozadia pre každú položku */
     }
 }
 </style>
+
+<script>
+    document.querySelectorAll('.star-foreground').forEach(star => {
+        star.addEventListener('click', function(e) {
+            const rating = Array.from(e.target.parentNode.children).indexOf(e.target) + 1;
+            document.getElementById('rating').value = rating;
+        });
+    });
+    const imageCount = {{ $imageCount }};
+    const images = [];
+    
+    for (let i = 1; i <= imageCount; i++) {
+        images.push("{{ asset('images/games/' . $game->name . '/' ) }}" + '/' + i + ".webp");
+    }
+
+    
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const imageElement = document.getElementById('gameImage');
+        imageElement.src = images[index];
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+
+    // Handling star rating for user reviews
+    const userRating = document.getElementById('userRating');
+    const userStars = document.getElementById('userStarForeground');
+    const ratingInput = document.getElementById('rating');
+
+    userRating.addEventListener('mousemove', function(e) {
+        const width = userRating.clientWidth;
+        const offsetX = e.offsetX;
+        const percentage = (offsetX / width) * 100;
+        userStars.style.width = `${percentage}%`;
+    });
+
+    userRating.addEventListener('mouseleave', function() {
+        const rating = ratingInput.value;
+        userStars.style.width = `${(rating / 5) * 100}%`;
+    });
+
+    userRating.addEventListener('click', function(e) {
+        const width = userRating.clientWidth;
+        const offsetX = e.offsetX;
+        const percentage = (offsetX / width) * 100;
+        ratingInput.value = (percentage / 20).toFixed(1); 
+        userStars.style.width = `${percentage}%`;
+    });
+
+</script>
+    

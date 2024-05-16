@@ -36,7 +36,7 @@
         <div id="order-row" class="order-row">
             <div class="game-frame">
                 <div class="pics">
-                    <img class="game-image" src="{{ asset('/pics/gta_v_game.jpg') }}" alt="GTA V Game Image">
+                    <img class="game-image" src="{{ asset('/images/games/' . $game->name . '/1.webp') }}" alt="GTA V Game Image">
                 </div>
                 <div class="game-details">
                     <div class="game-name">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="control-panel">
-                    <button id="order-frame-submit-button" class="submit-button">Show Code</button>
+                    <button id="order-frame-submit-button" class="submit-button" onclick="window.location.href='/game/{{$game->id}}'">Show Game</button>
                 </div>
             </div>
         </div>

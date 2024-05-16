@@ -164,7 +164,7 @@ class FirstController extends Controller
         if ($request->hasFile('images')) {
             $images = $request->file('images');
 
-            $folderName = preg_replace('/[^A-Za-z0-9\-]/', '', $game->name); // Odstránenie nežiadúcich znakov z názvu hry
+            $folderName = $game->name; 
             $folderPath = public_path('images/games/' . $folderName);
             File::makeDirectory($folderPath, 0777, true, true); // Vytvorenie adresára
     
@@ -183,7 +183,7 @@ class FirstController extends Controller
         if (!$this->isAdmin()) {
             return redirect('/');
         }
-        $folderName = preg_replace('/[^A-Za-z0-9\-]/', '', item::findOrFail($id)->name);
+        $folderName = item::findOrFail($id)->name;
 
         // Cesta k priečinku
         $folderPath = public_path('images/games/' . $folderName);
@@ -236,7 +236,7 @@ class FirstController extends Controller
         $game->update($data);
 
 
-        $folderName = preg_replace('/[^A-Za-z0-9\-]/', '', $game ->name);
+        $folderName = $game ->name;
 
         $folderPath = public_path('images/games/' . $folderName);
 
@@ -248,7 +248,7 @@ class FirstController extends Controller
         if ($request->hasFile('images')) {
             $images = $request->file('images');
 
-            $folderName = preg_replace('/[^A-Za-z0-9\-]/', '', $game->name); // Odstránenie nežiadúcich znakov z názvu hry
+            $folderName = $game->name; // Odstránenie nežiadúcich znakov z názvu hry
             $folderPath = public_path('images/games/' . $folderName);
             File::makeDirectory($folderPath, 0777, true, true); // Vytvorenie adresára
     
@@ -324,11 +324,18 @@ class FirstController extends Controller
         if ($reviews->isEmpty()) {
             $game->averageRating = 0;
         } else {
-            $game->averageRating = $reviews->avg('rating'); 
+            $game->averageRating = $reviews->avg('rating')/5*100; 
+            Log::info($game->averageRating);
         }
         $genres = GameGenres::all();
         $platforms = Platforms::all();  
-        return view('game/game_details', compact('game', 'reviews', 'genres', 'platforms')); 
+
+        $directory = public_path('images/games/' . $game->name);
+        $images = glob($directory . "/*.webp");
+        $imageCount = count($images);
+
+
+        return view('game/game_details', compact('game', 'reviews', 'genres', 'platforms', 'imageCount')); 
     }
     
     public function addToCart($itemId)
@@ -493,13 +500,12 @@ class FirstController extends Controller
         $maxPrice = $request->input('priceMax', null);
         $platformsF = $request->input('platform', []);
         $page = $request->input('page', 1);
-        $itemsPerPage = 21;
+        $itemsPerPage = 9;
 
         $text = $request->input('text', '');
-        
 
         $gameid = [];
-        
+
         foreach ($genresF as $genre) {
             $games = GameGenresGames::where('genre_ID', $genre)->pluck('game_ID')->unique()->toArray();
             $gameid = array_merge($gameid, $games);
@@ -511,18 +517,25 @@ class FirstController extends Controller
         }
         $gameid = array_unique($gameid);
 
-        $query = Item::whereIn('id', $gameid)->selectRaw('id, name, price, discount, description, developer, release_date, video_link, download_count, price - (price * discount / 100) as final_price');
+        $query = Item::query();
+
+        if (!empty($gameid)) {
+            $query->whereIn('id', $gameid);
+        }
+
+        if ($text != '') {
+            $query->where(function ($q) use ($text) {
+                $q->where('name', 'ILIKE', '%' . $text . '%')
+                ->orWhere('description', 'ILIKE', '%' . $text . '%');
+            });
+        }
 
         if ($minPrice !== null) {
             $query->whereRaw('price - (price * discount / 100) >= ?', [$minPrice]);
         }
+
         if ($maxPrice !== null) {
             $query->whereRaw('price - (price * discount / 100) <= ?', [$maxPrice]);
-        }
-
-        if (empty($gameid) && $text != '') {
-            $query = Item::whereRaw('name ILIKE ?', ['%' . $text . '%'])
-            ->orWhereRaw('description ILIKE ?', ['%' . $text . '%']);
         }
 
         switch ($sort) {
@@ -540,23 +553,21 @@ class FirstController extends Controller
                 break;
         }
 
-        
-        $totalItems = $query->get()->count();
+        $totalItems = $query->count();
         $totalPages = ceil($totalItems / $itemsPerPage);
 
         $games = $query->paginate($itemsPerPage, ['*'], 'page', $page);
 
-        if ($totalPages == 1){
+        if ($totalPages == 1) {
             $totalPages = 0;
         }
-        // Retrieve all genres to display filters
-        $genres = GameGenres::all();
 
+        $genres = GameGenres::all();
         $platforms = Platforms::all();
-        
-        // Return the view with the games, genres, and platforms
+
         return view('fitredGames', compact('games', 'genres', 'platforms', 'totalPages'));
     }
+
 
 
     public function setShipping(){
@@ -614,12 +625,52 @@ class FirstController extends Controller
         public function payProcess(Request $request) {
             if (Session::has('user_id')) {
                 $userId = Session::get('user_id');
+                $orders = Orders::where('account_ID', $userId)
+                                ->where('state', 'active')
+                                ->get();
+        
+                foreach ($orders as $order) {
+                    $product = Item::find($order->game_id);
+                    if ($product) {
+                        $product->download_count += 1;
+                        $product->save();
+                    }
+                }
+        
                 Orders::where('account_ID', $userId)
                       ->where('state', 'active')
                       ->update(['state' => 'purchased']);
             } else {
+                if (Session::has('cart') && !empty(Session::get('cart'))) {
+                    foreach (Session::get('cart') as $product_id => $item) {
+                        $product = Item::find($product_id);
+                        if ($product) {
+                            $product->download_count += 1;
+                            $product->save();
+                        }
+                    }
+                }
                 Session::forget('cart');
             }
-            return redirect('/'); 
+            return redirect('/');
         }
+
+        public function addReview(Request $request) {
+            if (!Session::has('user_id')) {
+                return redirect()->back()->with('error', 'You need to log in to add a review.');
+            }
+            
+
+            $review = new Reviews();
+            $review->account_ID = Session::get('user_id'); 
+            $review->game_ID = $request->input('game_id');
+            $review->rating = $request->input('rating');
+            $review->text = $request->input('text');
+            $review->save();
+    
+            return redirect()->back()->with('success', 'Review added successfully!');
+        }
+    
 }
+
+
